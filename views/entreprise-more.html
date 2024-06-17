@@ -1,0 +1,1632 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="Site keywords here">
+	<meta name="description" content="">
+	<meta name='copyright' content=''>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Title -->
+	<title>Entreprises</title>
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+		rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="views/assets/css/font-awesome.min.css">
+	<!-- Slicknav -->
+	<link rel="stylesheet" href="views/assets/css/slicknav.min.css">
+	<!-- Medipro CSS -->
+	<link rel="stylesheet" href="views/assets/css/normalize.css">
+	<link rel="stylesheet" href="views/assets/css/style.css">
+	<link rel="stylesheet" href="views/assets/css/responsive.css">
+</head>
+<style>
+	.cover-image-section {
+		width: 100%;
+		height: 250px;
+		background-color: #00987E;
+	}
+
+	.cover-hader-site {
+		position: relative;
+		width: 70%;
+		height: 100%;
+		margin: auto;
+		object-fit: cover;
+	}
+
+	.cover-hader-site img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		cursor: pointer;
+		/*border-radius: 0px 0px 10px 10px;*/
+	}
+
+
+	.profile-section {
+		width: 100%;
+	}
+
+	.profile-section-in {
+		width: 70%;
+		height: 120px;
+		border-bottom: 1px solid #3335;
+		margin: auto;
+		display: grid;
+		grid-template-columns: 2fr 6fr 10fr 4fr;
+	}
+
+	.profile-image-div {
+		position: relative;
+		width: 125px;
+		height: 125px;
+		border: 3px solid #fff;
+		margin-left: 20px;
+		transform: translateY(-30px);
+		background-color: #fff;
+		border-radius: 10%;
+	}
+
+	.profile-image-div img {
+		width: 100%;
+		height: 100%;
+		border-radius: 10%;
+		object-fit: cover;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+
+	.profile-image-div img:hover {
+		filter: brightness(0.9);
+	}
+
+	.profile-image-div span {
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		cursor: pointer;
+		padding: 5px 5px;
+		border-radius: 50%;
+		background-color: #d5d5d5;
+		font-size: 18px;
+		color: #333;
+	}
+
+	.profile-name-info h1 {
+		margin-top: 20px;
+		margin-left: 10px;
+		font-size: 25px;
+		color: #000;
+	}
+
+	.profile-name-info p {
+		font-size: 14px;
+		color: #333;
+		margin-left: 10px;
+	}
+
+	.profile-name-info p span {
+		cursor: pointer;
+	}
+
+	.btn-site-pro {
+		width: 100%;
+	}
+
+	.entreprise-button-site span {
+		padding: 10px 15px;
+		border-radius: 5px;
+		margin-top: 10px;
+		margin-right: 5px;
+		font-size: 14px;
+		background-color: rgb(236, 230, 230);
+		cursor: pointer;
+		border: none;
+		outline: none;
+		color: #235BA8;
+	}
+
+	.entreprise-button-site span i {
+		margin-right: 5px;
+	}
+
+	.entreprise-button-site span:hover {
+		background-color: #235BA8;
+		color: #fff;
+	}
+
+	.site-web-btn {
+		background-color: #235BA8 !important;
+		color: white !important;
+	}
+
+	.site-web-btn:hover {
+		background-color: #00957E !important;
+	}
+
+	.btn-site-pro {
+		margin-top: 75px;
+		text-align: right;
+	}
+
+	.full-navbar {
+		width: 100%;
+		border-bottom: 1px solid #3335;
+	}
+
+	.navbar-site {
+		width: 70%;
+		margin: auto;
+		display: grid;
+		grid-template-columns: 4fr 1fr;
+	}
+
+	.navbar-site ul {
+		padding: 0px;
+		margin-bottom: 0px;
+		margin-left: 5px;
+	}
+
+	.navbar-site ul a {
+		text-decoration: none;
+	}
+
+	.navbar-site ul a li,
+	.navbar-site ul li {
+		display: inline-block;
+		padding: 15px 12px;
+		font-size: 14px;
+		font-weight: bold;
+		color: #707070;
+		cursor: pointer;
+		margin-left: -5px;
+		transform: 0.3s;
+	}
+
+	.navbar-site ul a li:hover,
+	.navbar-site ul li:hover {
+		background-color: #E4E6E9;
+	}
+
+	.activ-navbar {
+		position: relative;
+		background-color: #fff !important;
+		color: #1877F2 !important;
+	}
+
+	.activ-navbar i {
+		color: #1877F2 !important;
+	}
+
+	.activ-navbar:after {
+		position: absolute;
+		content: '';
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 3px;
+		background-color: #1877F2;
+	}
+
+	.nav-btn {
+		text-align: right;
+	}
+
+	.nav-btn i {
+		font-size: 16px;
+		padding: 7px 12px;
+		background-color: #E4E6E9;
+		border-radius: 5px;
+		color: #707070;
+		margin-top: 8px;
+		cursor: pointer;
+	}
+
+	.nav-btn i:hover {
+		background-color: #D8DADF;
+		color: #333;
+	}
+
+	.entreprise-section {
+		width: 100%;
+		background-color: #F0F2F5;
+		padding: 20px 0px;
+	}
+
+	.entreprise-section-in {
+		width: 70%;
+		margin: auto;
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		grid-column-gap: 15px;
+	}
+
+	.box-design {
+		border-radius: 5px;
+		box-shadow: 0px 1px 2px #3335;
+		background-color: #fff;
+		padding: 10px;
+		margin-bottom: 15px;
+	}
+
+	.profile-div {
+		border-radius: 5px;
+		box-shadow: 0px 1px 2px #3335;
+		background-color: #fff;
+		display: grid;
+		grid-template-columns: 1fr 5fr;
+		padding: 10px;
+		margin-bottom: 15px;
+	}
+
+	.icon-pld i {
+		padding: 10px 10px;
+		background-color: #235BA8;
+		border-radius: 50%;
+		color: #fff;
+		font-size: 25px;
+	}
+
+	.pld-text h3 {
+		font-size: 15px;
+		color: #333;
+		margin-top: 7px;
+		margin-left: 10px;
+	}
+
+	.pld-text a {
+		text-decoration: none;
+		font-size: 13px;
+		margin-left: 10px;
+		margin-top: 2px;
+		font-weight: bold;
+		color: #1771E6;
+	}
+
+	.pld-text a:hover {
+		text-decoration: underline;
+	}
+
+	.about-info {
+		border-radius: 5px;
+		padding: 10px;
+		box-shadow: 0px 1px 2px #3335;
+		background-color: #fff;
+		margin-bottom: 15px;
+	}
+
+	.about-info h4 {
+		font-size: 18px;
+		color: #000;
+		font-weight: bold;
+	}
+
+	.about-info p {
+		font-size: 15px;
+		padding: 10px 0px;
+		color: #333;
+		text-align: center;
+	}
+
+	.btn {
+		width: 100%;
+		padding: 5px 0px;
+		font-size: 14px;
+		border: none;
+		outline: none;
+		background-color: #E4E6EB;
+		font-weight: bold;
+		color: #000;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: #D8DADF;
+	}
+
+	.about-info ul {
+		margin-bottom: 0px;
+		padding: 5px 0px;
+	}
+
+	.about-info ul li {
+		list-style: none;
+		font-size: 13px;
+		color: #333;
+		padding: 7px 0px;
+	}
+
+	.about-info ul li i {
+		margin-right: 5px;
+		color: #3339;
+	}
+
+	.about-info ul li a {
+		text-decoration: none;
+		color: #1771E6;
+	}
+
+	.about-info ul li a:hover {
+		text-decoration: underline;
+	}
+
+	.friends-site {
+		position: relative;
+	}
+
+	.Hobbies-show {
+		padding: 20px 0px;
+	}
+
+	.Hobbies-show span {
+		padding: 8px 10px;
+		border: 1px solid #E4E6EB;
+		background-color: #fff;
+		color: #333;
+		font-size: 13px;
+		margin: 4px 1px 4px 1px;
+		font-weight: bold;
+		border-radius: 20px;
+		display: inline-block;
+	}
+
+	.all-images {
+		font-size: 14px !important;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+	.all-images a {
+		text-decoration: none;
+		color: #1771E6 !important;
+	}
+
+	.all-images a:hover {
+		text-decoration: underline;
+	}
+
+	.at9-images {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 3px;
+		padding: 10px 0px 0px 0px;
+	}
+
+	.images-div img {
+		width: 100%;
+		height: 80px;
+		cursor: pointer;
+		object-fit: cover;
+		border-radius: 5px;
+	}
+
+	.friends-site span p {
+		font-size: 14px;
+		color: #3339;
+		margin-top: 5px;
+	}
+
+	.images-div p {
+		font-size: 11px;
+		padding: 3px 5px;
+		text-align: left;
+		padding-bottom: 10px;
+	}
+
+	.images-div p a {
+		text-decoration: none;
+		color: #333;
+	}
+
+	.images-div p a:hover {
+		text-decoration: underline;
+	}
+
+	.entreprise-upload-T {
+		display: grid;
+		grid-template-columns: 1fr 7fr;
+		border-bottom: 1px solid #3333;
+		padding-bottom: 10px;
+	}
+
+	.profil-ing-div {
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+	}
+
+	.profil-ing-div img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.text-entreprise {
+		position: relative;
+		width: 100%;
+		padding: 7px 10px;
+		box-sizing: border-box;
+		border-radius: 25px;
+		background-color: #E4E6EB;
+		cursor: pointer;
+	}
+
+	.text-entreprise:hover {
+		background-color: #D8DADF;
+	}
+
+	.text-entreprise span {
+		position: absolute;
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 15px;
+		color: #333;
+	}
+
+	.entreprise-upl {
+		width: 100%;
+		padding: 5px 5px;
+		box-sizing: border-box;
+		background-color: #fff;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+
+	.entreprise-upl:hover {
+		background-color: #E4E6EB;
+	}
+
+	.entreprise-upl p {
+		padding: 5px 0px;
+		text-align: center;
+		font-size: 14px;
+		color: #333;
+	}
+
+	.entreprise-upl p i {
+		margin-right: 5px;
+	}
+
+	.entreprise-upl p .fa-video {
+		color: #E42645;
+	}
+
+	.entreprise-upl p .fa-images {
+		color: #41B35D;
+	}
+
+	.entreprise-upl p .fa-flag {
+		color: #3AA8CB;
+	}
+
+	.entreprise-filter {
+		padding-bottom: 0px;
+	}
+
+	.entreprise-infarmation {
+		display: grid;
+		grid-template-columns: 1fr 7fr;
+		padding: 10px;
+	}
+
+	.entreprise-infarmation div h2 {
+		font-size: 14px;
+		margin-left: 5px;
+		margin-top: 7px;
+	}
+
+	.entreprise-infarmation div h2 a {
+		text-decoration: none;
+		color: #333;
+	}
+
+	.entreprise-infarmation div h2 a:hover {
+		text-decoration: underline;
+	}
+
+	.entreprise-infarmation div p {
+		font-size: 11px;
+		color: #3339;
+		margin-top: 3px;
+		margin-left: 5px;
+	}
+
+	.entreprise-infarmation div p a {
+		text-decoration: none;
+		color: #3339;
+	}
+
+	.entreprise-infarmation div p a:hover {
+		text-decoration: underline;
+	}
+
+	.entreprise-infarmation div p span {
+		margin-left: 5px;
+	}
+
+	.entreprise-infarmation div p span i {
+		cursor: pointer;
+	}
+
+	.entreprise-infarmation div p span i:hover {
+		color: #333;
+	}
+
+	.entreprise-three-dot {
+		position: relative;
+	}
+
+	.entreprise-three-dot .thre-dto-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 10px;
+		width: 25px;
+		height: 25px;
+		border-radius: 10px;
+		background-color: #fff;
+		font-size: 14px;
+		color: #333;
+		padding: 5px 5px;
+		box-sizing: border-box;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.entreprise-three-dot .thre-dto-btn:hover {
+		background-color: #E4E6E9;
+	}
+
+	.entreprise-div {
+		padding: 0px;
+	}
+
+	.entreprise-div img {
+		width: 100%;
+		cursor: pointer;
+		object-fit: cover;
+	}
+
+	.entreprise-input {
+		padding: 10px;
+	}
+
+	.lilowow-cs {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+	}
+
+	.lilowow-cs p {
+		font-size: 14px;
+		color: #3339;
+		text-align: right;
+	}
+
+	.lilowow-cs p a {
+		text-decoration: none;
+		color: #3339;
+	}
+
+	.lilowow-cs p a:hover {
+		text-decoration: underline;
+	}
+
+	.llw-count {
+		display: grid;
+		grid-template-columns: 15px 15px 15px 1fr;
+	}
+
+	.icon-show {
+		position: relative;
+		width: 17px;
+		height: 17px;
+		box-sizing: border-box;
+		overflow: hidden;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		cursor: pointer;
+	}
+
+	.l-count {
+		text-align: left !important;
+		margin-left: 7px;
+	}
+
+	.top {
+		transform: translateX(28px);
+	}
+
+	.mid {
+		transform: translateX(0px);
+	}
+
+	.low {
+		transform: translateX(-28px);
+	}
+
+	.love-icon-bg {
+		background-image: linear-gradient(to bottom, #FD5976, #E81E44);
+	}
+
+	.like-icon-bg {
+		background-image: linear-gradient(to bottom, #11A6FC, #036FE4);
+	}
+
+	.icon-show i {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 8px;
+		color: #fff;
+	}
+
+	.icon-show img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+	.actavite {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 5px;
+		padding: 5px 0px;
+		margin: 0px 10px;
+		border-top: 1px solid #3333;
+		cursor: pointer;
+	}
+
+	.lcs-btn:hover {
+		background-color: #E4E6E9;
+	}
+
+	.lcs-btn {
+		border-radius: 5px;
+	}
+
+	.lcs-btn p {
+		padding: 10px 0px;
+		font-size: 14px;
+		text-align: center;
+		color: #707070;
+
+	}
+
+	.lcs-btn p i {
+		margin-left: 5px;
+	}
+
+	.comment-site {
+		position: relative;
+	}
+
+	.comment-site {
+		display: grid;
+		grid-template-columns: 1fr 7fr;
+		border-top: 1px solid #3333;
+		padding: 8px;
+		margin: 0px 10px;
+	}
+
+	.comment-input input {
+		width: 100%;
+		border: none;
+		outline: none;
+		box-sizing: border-box;
+		background-color: #E4E6E9;
+		border-radius: 20px;
+		font-size: 15px;
+		padding: 9px 10px;
+		padding-right: 120px;
+		text-indent: 5px;
+	}
+
+	.comment-icon-div {
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-column-gap: 3px;
+		width: 110px;
+		padding: 8px 0px;
+	}
+
+	.comment-icon-div>div {
+		width: 22px;
+		background-color: #fff;
+		border-radius: 50%;
+		box-sizing: border-box;
+		overflow: hidden;
+		height: 22px;
+		cursor: pointer;
+	}
+
+	.comment-icon-div>div>i {
+		font-size: 15px;
+		color: #707070;
+		padding: 4px 3px;
+	}
+
+	.entreprise-text-show {
+		padding: 10px 15px;
+		font-size: 16px;
+		color: #333;
+		border-top: 1px solid #3333;
+		border-bottom: 1px solid #3333;
+	}
+
+	.entreprise-background {
+		position: relative;
+		background-color: #333;
+		color: #fff;
+		width: 100%;
+		height: 300px;
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.entreprise-background div {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		box-sizing: border-box;
+		transform: translateY(-50%);
+		padding: 30px 30px;
+	}
+
+	.entreprise-background p {
+		font-size: 22px;
+		text-align: center;
+	}
+
+	.entreprise-profile-img {
+		width: 45px;
+		height: 45px;
+	}
+
+	.entreprise-background-img {
+		background-color: #fff;
+		color: #fff;
+		width: 100%;
+		height: 350px;
+		box-sizing: border-box;
+		overflow: hidden;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 3px;
+	}
+
+	.entreprise-background-img div {
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.entreprise-background-img div img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+	.entreprise-background-img div .one-or-two {
+		width: 100% !important;
+		height: 50% !important;
+		background-color: #3335;
+		box-sizing: border-box !important;
+	}
+
+	.one-or-two:first-child {
+		border-bottom: 3px solid #fff;
+	}
+
+	.one-or-two img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+	.ofverflow-images {
+		position: relative;
+	}
+
+	.ofverflow-images img {
+		filter: brightness(0.6);
+	}
+
+	.ove-img-div {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-color: #3335;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		box-sizing: border-box;
+		cursor: pointer;
+	}
+
+	.ove-img-div p {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 35px;
+		color: #fff;
+		font-weight: 400;
+	}
+
+	.entreprise-hader-text {
+		font-size: 14px;
+		color: #333;
+		padding: 0px 10px 10px 10px;
+		display: none;
+	}
+
+
+
+
+
+
+	@media screen and (max-width: 1199px) {}
+
+	@media screen and (max-width: 991px) {
+
+		.cover-hader-site,
+		.profile-section-in,
+		.navbar-site,
+		.entreprise-section-in {
+			width: 80%;
+		}
+
+		.profile-image-div {
+			width: 120px;
+			height: 120px;
+			transform: translateY(-20px);
+		}
+
+		.profile-name-info h1 {
+			font-size: 23px;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+
+		.cover-hader-site,
+		.profile-section-in,
+		.navbar-site {
+			width: 90%;
+		}
+
+		.entreprise-section-in {
+			width: 100%;
+		}
+
+		.profile-image-div {
+			width: 150px;
+			height: 150px;
+			transform: translateY(-80px);
+			border: 5px solid #fff;
+			margin: auto;
+		}
+
+		.profile-image-div span {
+			right: 5px;
+			bottom: 5px;
+			padding: 10px 10px;
+		}
+
+		.profile-section-in {
+			grid-template-columns: 1fr;
+			height: 250px;
+		}
+
+		.profile-name-info {
+			margin-top: -75px;
+			text-align: center;
+		}
+
+		.profile-name-info h1 {
+			font-size: 30px;
+			margin-left: 0px;
+			margin-top: 0px;
+		}
+
+		.profile-name-info p {
+			font-size: 16px;
+			padding: 5px;
+			margin-left: 0px;
+		}
+
+		.site-web-btn {
+			margin-left: 10px;
+		}
+
+		.btn-site-pro {
+			margin-top: 20px;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.navbar-site {
+			grid-template-columns: 7fr 1fr;
+		}
+
+		.entreprise-button-site span {
+			padding: 10px 20px;
+			margin-right: 10px;
+			font-size: 16px;
+		}
+
+		.entreprise-upl {
+			padding: 5px 2px;
+		}
+
+		.about-info ul li {
+			font-size: 12px;
+		}
+	}
+
+	@media screen and (max-width: 575px) {
+		.cover-hader-site {
+			width: 100%;
+		}
+
+		.profile-section-in,
+		.navbar-site,
+		.entreprise-section-in {
+			width: 98%;
+		}
+
+		.cover-hader-site img {
+			border-radius: 0px 0px;
+			cursor: pointer;
+		}
+
+
+
+		.entreprise-section-in {
+			grid-template-columns: 1fr;
+			grid-column-gap: 0px;
+		}
+
+		.info-section {
+			display: none;
+		}
+
+		.entreprise-button-site span {
+			padding: 10px 13px;
+			margin-right: 5px;
+
+		}
+
+		.entreprise-images {
+			height: 500px;
+			object-fit: cover;
+		}
+	}
+</style>
+
+<body>
+
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader-outter"></div>
+			<div class="loader-inner"></div>
+
+			<div class="indicator">
+				<svg width="70px" height="15px">
+					<text x="0" y="15" fill="white">DIGIJOB</text>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+	<!-- Header Area -->
+	<header class="header">
+		<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+
+						<div class="col-lg-2 col-md-3 col-12">
+							<!-- Start Logo -->
+							<div class="logo">
+								<a href="index.html">DIGIJOB</a>
+							</div>
+							<!-- End Logo -->
+							<!-- Mobile Nav -->
+							<div class="mobile-nav"></div>
+							<!-- End Mobile Nav -->
+						</div>
+						<div class="col-lg-10 col-md-9 col-12">
+							<!-- Main Menu -->
+							<div class="main-menu" style="float: right;">
+								<nav class="navigation">
+									<ul class="nav menu">
+										<li><a href="/acceuil">Mon espace</a>
+										</li>
+										<li><a class="nav-link scrollto" href="/allCandidature">Mes candidatures</a>
+										</li>
+										<li><a class="nav-link scrollto" href="/Updateprofile">Mon profil et Cv</a></li>
+										<li><a class="nav-link scrollto" href="/allOffres">Offres</a></li>
+										<li class="active"><a class="nav-link scrollto"
+												href="/allEntreprises">Entreprises</a></li>
+										<li><a class="nav-link scrollto" href="/allEvenement">Evènements</a></li>
+										<li class="slicknav_parent slicknav_open user">
+											<a href="#" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+												aria-expanded="false"><i class="bi bi-person-circle"
+													style="font-size: 1.2rem;"></i>
+											</a>
+											<ul class="dropdown" role="menu" aria-hidden="false" style="">
+												 <!--<li><a class="dropdown-item" href="#"><i class="bi bi-gear mx-2"
+                          style="font-size: 1.2rem;"></i>Paramètres</a></li>-->
+												<li><a class="dropdown-item" style="color: red;" href="/logout"><i
+															class="bi bi-power mx-2"
+															style="font-size: 1.2rem; color: red;"></i>Déconnexion</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+							</div>
+							<!--/ End Main Menu -->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!-- End Header Area -->
+	<section class="cover-image-section col-lg">
+		<header class="cover-hader-site">
+			<img src="https://digijobs.asinyo.com/files/logoEntreprise/{{ .Entreprises.Logo }}">
+		</header>
+	</section>
+	<section class="profile-section">
+		<div class="profile-section-in">
+			<div class="col-lg-12 col-12">
+				<div class="profile-image-div">
+					<a href="#">
+						<img src="https://digijobs.asinyo.com/files/logoEntreprise/{{ .Entreprises.Logo }}">
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-12 col-12">
+				<div class="profile-name-info">
+					<h1>
+						<span class="pro-txt">{{.Entreprises.NomEntreprise}}</span>
+					</h1>
+					<p>
+						<span class="fir-count-txt">
+							<span>{{.Entreprises.Slogan}}</span>
+						</span>
+					</p>
+				</div>
+			</div>
+
+			<div class="entreprise-button-site">
+				<div class="col-lg-12 col-12">
+					<div class="container">
+						<div class="row">
+							<div class="btn-site-pro">
+								<span class="col-lg-4">
+									<i class="bi bi-buildings" style="font-size: 20px;"></i>
+									<strong>{{.Entreprises.TailleEntreprise}}</strong>
+								</span>
+								<span class="col-lg-4">
+									<i class="bi bi-briefcase" style="font-size: 20px;"></i>
+									<strong>{{.Entreprises.SecteurActivite}}</strong>
+								</span>
+								<span class="col-lg-4">
+									<i class="bi bi-geo-alt" style="font-size: 20px;"></i>
+									<strong> {{.Entreprises.Adresse}}</strong>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="entreprise-button-site">
+				<div class="btn-site-pro">
+					<a href="{{.Entreprises.SiteWeb}}" target="_blank"><span class="site-web-btn">
+							<i class="bi bi-link"></i>Visiter notre site web
+						</span>
+					</a>
+				</div>
+			</div>
+	</section>
+
+
+	<!-- Start entreprise-section -->
+	<section class="full-navbar" id="section-entreprise">
+		<nav class="navbar-site">
+			<ul compact="txt-color-c">
+				<a href="#">
+					<li class="activ-navbar">Entreprise</li>
+				</a>
+				<a href="#">
+					<li id="equipe-navbar">Equipe</li>
+				</a>
+				<a href="#">
+					<li id="offres-navbar">Offres</li>
+				</a>
+				<a href="#">
+					<li id="evenements-navbar">Evènements</li>
+				</a>
+			</ul>
+		</nav>
+	</section>
+	<section class="entreprise-section col-lg">
+		<div class="container">
+			<div class="row">
+				<div class="entreprise-section-in col-lg">
+					<section class="info-section col-lg">
+						<!--<div class="profile-div">
+							<div class="icon-pld mt-2">
+								<i class="bi bi-lightbulb"></i>
+							</div>
+							<div class="pld-text">
+								<h3>Nos Valeurs</h3>
+								<p><strong>Discipline | Rigueur | Travail</strong></p>
+							</div>
+						</div>-->
+						<div class="about-info">
+							<h4>Intro</h4>
+							<ul>
+								<li><i class="bi bi-envelope"></i> <span class="text-dark">Email</span>
+									<a href="#" target="_blank">{{.Entreprises.Email}}</a>
+								</li>
+
+								<li><i class="bi bi-telephone"></i> Numéro de téléphone
+									<a href="#">{{.Entreprises.NumeroEntreprise}}</a>
+								</li>
+
+								<li><i class="bi bi-facebook"></i>
+									<span class="text-dark">Facebook</span>
+									<a href="{{.Entreprises.SiteWeb}}" target="_blank"> Lien
+									</a>
+								</li>
+
+								<li><i class="bi bi-twitter"></i><span class="text-dark">Twitter</span>
+									<a href="{{.Entreprises.Twitter}}" target="_blank">{{.Entreprises.Twitter}}</a>
+								</li>
+								<li><i class="bi bi-globe"></i><span class="text-dark">Site
+										web</span><a href="{{.Entreprises.SiteWeb}}" target="_blank">
+										{{.Entreprises.SiteWeb}}
+									</a></li>
+							</ul>
+						</div>
+
+						<div class="box-design friends-site">
+
+							<span>Nos contenus <br>
+							</span>
+
+							<div class="all-images"><a href="#"></a></div>
+							<div class="row row-cols-6 row-cols-md-6 g-4 mt-2">
+								{{range .Entreprises.ContenueEntreprise}}
+								<div class="col-lg">
+									<div class="card">
+										<img src="https://digijobs.asinyo.com/files/contenueImgEntreprise/{{.PhotoUpload}}"
+											class="card-img-top" alt="Hollywood Sign on The Hill" />
+										<div class="card-body">
+											<h5 class="card-title">{{.NomPhoto}}</h5>
+											<!-- <p class="card-text">
+												image
+											</p> -->
+										</div>
+									</div>
+								</div>
+								{{end}}
+							</div>
+						</div>
+					</section>
+					<section class="entreprise">
+						<!-- ************ entreprise ************ -->
+						<div class="box-design entreprise-div">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Présentation</h5>
+									<p class="card-text">
+										{{.Entreprises.DescriptionEntreprise}}
+									</p>
+								</div>
+								<video width="100%" controls>
+									<source
+										src="https://digijobs.asinyo.com/files/videoEntreprise/{{.Entreprises.VideoEntreprise}}"
+										type="video/mp4">
+								</video>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End entreprise-section -->
+
+
+	<!-- Start offres-section -->
+	<section class="full-navbar col-lg" id="section-offres">
+		<nav class="navbar-site">
+			<ul compact="txt-color-c">
+				<a href="#">
+					<li id="entreprise-navbar">Entreprise</li>
+				</a>
+				<a href="#">
+					<li id="equipe-navbar">Equipe</li>
+				</a>
+				<a href="#">
+					<li class="activ-navbar" id="offres-navbar">Offres</li>
+				</a>
+				<a href="#">
+					<li id="evenements-navbar">Evènements</li>
+				</a>
+			</ul>
+		</nav>
+	</section>
+	<section class="offres-section grid section bg-light col-lg">
+		<div class="container">
+			<div class="row">
+				<!--<div class="col-lg-3 col-12">
+					<div class="main-sidebar">
+						<div class="single-widget search" style="background-color: #F1F7FD;">
+							<div class="form">
+								<input type="email" class="bg-white" placeholder="Search Here...">
+								<a class="button" href="#" style="color: #235BA8; background-color: #235BA8;"><i
+										class="fa fa-search" style="color: #fff;"></i></a>
+							</div>
+						</div>
+						<div class="single-widget card">
+							<div class="form">
+								<h5>Trier par :</h5>
+								<select class="col-lg">
+									<option value="ajout">Dernier ajouté</option>
+									<option value="duree">Durée</option>
+									<option value="etude">Niveau d'étude</option>
+									<option value="experience">Expérience professionnelle</option>
+									<option value="langue">Langue</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<div class="col-lg-12 col-12">
+					<!-- Start Job List Area -->
+					<div class="job-list-area ptb-100">
+						<div class="container">
+							<p class="p-3">0 offres d'emploi disponible</p>
+
+							<div class="row">
+								<div class="col-lg-4 col-md-6">
+								{{range .Offres}}
+									<div class="single-job-list-box">
+										<div class="job-information">
+											<div class="company-logo">
+												<a href="details-offre.html"><img src="https://digijobs.asinyo.com/files/logoEntreprise/{{.LogoEntreprise}}"
+														alt="image"></a>
+											</div>
+											<h3>
+												<a href="details-offre.html">{{.TitrePoste}}</a>
+											</h3>
+											<span>{{.NomEntreprise}}</span>
+
+											<div class="bookmark-btn">
+												<i class="bi bi-star"></i>
+											</div>
+
+											<div class="hover-bookmark-btn">
+												<i class="bi bi-star-fill"></i>
+											</div>
+										</div>
+
+										<ul class="job-tag-list">
+											<li class="contrat">{{.TypeContrat}}</li>
+										</ul>
+
+										<ul class="location-information">
+											<li><i class="bi bi-stopwatch"></i> Date limite <span
+													class="text-danger mx-2">{{.DateLimite}}</span></li>
+											<li><i class="bi bi-geo-alt"></i>Lieu <span
+													class="text-danger mx-2">{{.Ville}}</span></li>
+											<li><i class="bi bi-stopwatch"></i><span class="text-danger mx-2">
+													{{.AnneeExperience}}</span> ans d'experience</li>
+										</ul>
+
+										<div class="job-btn">
+											<a href="/detailOffres?id={{.Id}}" class="default-btn">Postuler <i
+													class="bi bi-info-circle"></i></a>
+										</div>
+									</div>
+									{{end}}
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<div class="pagination-area">
+										<li class="page-numbers prev disable"><a href="#" class="link">Prev</a></li>
+										<li class="page-numbers currentPage current"><span class="link"
+												aria-current="page">1</span></li>
+										<li class="page-numbers currentPage"><a href="#" class="link">2</a></li>
+										<li class="page-numbers dots"><span class="link">...</span></li>
+										<li class="page-numbers currentPage"><a href="#" class="link">3</a></li>
+										<li class="page-numbers currentPage"><a href="#" class="link">4</a></li>
+										<li class="page-numbers dots"><span class="link">...</span></li>
+										<li class="page-numbers currentPage"><a href="#" class="link">5</a></li>
+										<li class="page-numbers next"><a href="#" class="link">Next</a></li>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Job List Area -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End offres-section -->
+
+	<!-- Start equipe-section -->
+	<!--<section class="full-navbar" id="section-equipe">
+		<nav class="navbar-site">
+			<ul compact="txt-color-c">
+				<a href="#">
+					<li id="entreprise-navbar">Entreprise</li>
+				</a>
+				<a href="#">
+					<li class="activ-navbar" id="equipe-navbar">Equipe</li>
+				</a>
+				<a href="#">
+					<li id="offres-navbar">Offres</li>
+				</a>
+				<a href="#">
+					<li id="evenements-navbar">Evènements</li>
+				</a>
+			</ul>
+		</nav>
+	</section>
+	<section class="equipe-section text-center py-5">
+		<div class="container pb-5 pt-5">
+			<div class="pb-5 pt-5 row">
+				<div class="col-lg-9 col-xl-8 ms-auto me-auto pb-5 pt-5">
+					<span><i class="bi bi-bag-x-fill" style="font-size: 5rem; color: rgb(187, 4, 4);"></i></span>
+					<h6 class="display-3 fw-bold mb-3">0 offre disponible pour l'instant !</h6>
+					<p class="lead mb-4">Consultez régulièrement ce champs pour les mises à ajout</p>
+				</div>
+			</div>
+		</div>
+	</section>-->
+	<!-- End equipe-section -->
+
+	<!-- Start evenements-section -->
+	<!--<section class="full-navbar" id="section-evenements">
+		<nav class="navbar-site">
+			<ul compact="txt-color-c">
+				<a href="#">
+					<li id="entreprise-navbar">Entreprise</li>
+				</a>
+				<a href="#">
+					<li id="equipe-navbar">Equipe</li>
+				</a>
+				<a href="#">
+					<li id="offres-navbar">Offres</li>
+				</a>
+				<a href="#">
+					<li class="activ-navbar" id="evenements-navbar">Evènements</li>
+				</a>
+			</ul>
+		</nav>
+	</section>
+	<section class="evenements-section text-center py-5">
+		<div class="container pb-5 pt-5">
+			<div class="pb-5 pt-5 row">
+				<div class="col-lg-9 col-xl-8 ms-auto me-auto pb-5 pt-5">
+					<span><i class="bi bi-bag-x-fill" style="font-size: 5rem; color: rgb(187, 4, 4);"></i></span>
+					<h6 class="display-3 fw-bold mb-3">0 offre disponible pour l'instant !</h6>
+					<p class="lead mb-4">Consultez régulièrement ce champs pour les mises à ajout</p>
+				</div>
+			</div>
+		</div>
+	</section>-->
+	<!-- End equipe-section -->
+
+	<!-- Footer Area -->
+	<footer id="footer" class="footer ">
+		<!-- Footer Top -->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-12">
+						<div class="single-footer">
+							<h2>A propos de nous</h2>
+							<p>Que vous soyez en quête d'une aventure digitale pour propulser votre carrière
+								ou que vous cherchiez à enrichir votre équipe avec les meilleurs talents du numérique,
+								vous avez frappé à la bonne porte.</p>
+							<!-- Social -->
+							<ul class="social">
+								<li><a href="https://www.facebook.com/digifemmes1" target="_blank"><i
+											class="bi bi-facebook"></i></a>
+								</li>
+								<li><a href="https://www.linkedin.com/company/digifemmes/" target="_blank"><i
+											class="bi bi-linkedin"></i></a></li>
+								<li><a href="https://www.instagram.com/digifemmes/" target="_blank"><i
+											class="bi bi-instagram"></i></a>
+								</li>
+								<li><a href="https://twitter.com/DigiFemmes" target="_blank"><i
+											class="bi bi-twitter"></i></a></li>
+								<li><a href="https://www.tiktok.com/@digifemmes" target="_blank"><i
+											class="bi bi-tiktok"></i></a></li>
+								<li><a href="https://www.youtube.com/channel/UCGss3P1qjAI_nFl7twQu0gw"
+										target="_blank"><i class="bi bi-youtube"></i></a></li>
+							</ul>
+							<!-- End Social -->
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 col-12">
+						<div class="single-footer f-link">
+							<h2>Liens rapides</h2>
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-12">
+									<ul>
+										<li><a href="#hero"><i class="fa fa-caret-right"
+													aria-hidden="true"></i>Accueil</a>
+										</li>
+										<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>A Propos de
+												nous</a>
+										</li>
+										<li><a href="#"><i class="fa fa-caret-right"
+													aria-hidden="true"></i>Entreprises</a>
+										</li>
+										<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Offres</a>
+										</li>
+										<li><a href="#"><i class="fa fa-caret-right"
+													aria-hidden="true"></i>Evènement</a></li>
+									</ul>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<ul>
+										<li><a href="#testimonial"><i class="fa fa-caret-right"
+													aria-hidden="true"></i>Temoignages</a></li>
+										<li><a href="#faq"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a>
+										</li>
+										<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Nous
+												Contacter</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-12">
+						<div class="single-footer">
+							<h2>Newsletter</h2>
+							<p>Abonnez-vous à notre newsletter pour obtenir des nouvelles actualités dans votre boîte de
+								réception.
+							</p>
+							<form action="#" method="get" target="_blank" class="newsletter-inner">
+								<input name="email" placeholder="Email Address" class="common-input"
+									onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
+									required="" type="email">
+								<button class="button"><i class="bi bi-send" style="color: #235BA8;"></i></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Footer Top -->
+		<!-- Copyright -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-12">
+						<div class="copyright-content">
+							<p>© Copyright 2023 | All Rights Reserved by <a
+									href="https://www.digifemmes.com/digifemmes-academy" target="_blank">DigiFemmes</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Copyright -->
+	</footer>
+	<!--/ End Footer Area -->
+
+	<!-- jquery Min JS -->
+	<script src="views/assets/js/jquery.min.js"></script>
+	<!-- jquery Migrate JS -->
+	<script src="views/assets/js/jquery-migrate-3.0.0.js"></script>
+
+	<script src="views/assets/js/popper.min.js"></script>
+	<!-- Jquery Nav JS -->
+	<script src="views/assets/js/jquery.nav.js"></script>
+	<!-- Slicknav JS -->
+	<script src="views/assets/js/slicknav.min.js"></script>
+	<!-- ScrollUp JS -->
+	<script src="views/assets/js/jquery.scrollUp.min.js"></script>
+	<!-- Counter Up CDN JS -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<!-- Main JS -->
+	<script src="views/assets/js/main.js"></script>
+	<script src="views/assets/js/pagination.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.offres-section').hide();
+			$('#section-offres').hide();
+			$('.evenements-section').hide();
+			$('#section-evenements').hide();
+			$('.equipe-section').hide();
+			$('#section-equipe').hide();
+
+			$("#offres-navbar").click(function () {
+				$(".offres-section").show();
+				$("#section-offres").show();
+				$(".entreprise-section").hide();
+				$("#section-entreprise").hide();
+				$('.evenements-section').hide();
+				$('#section-evenements').hide();
+				$('.equipe-section').hide();
+				$('#section-equipe').hide();
+			});
+
+			/*$("#equipe-navbar").click(function () {
+				$(".entreprise-section").hide();
+				$("#section-entreprise").hide();
+				$(".offres-section").hide();
+				$("#section-offres").hide();
+				$('.evenements-section').hide();
+				$('#section-evenements').hide();
+
+				$('.equipe-section').show();
+				$('#section-equipe').show();
+			});
+
+			$("#evenements-navbar").click(function () {
+				$(".entreprise-section").hide();
+				$("#section-entreprise").hide();
+				$('.equipe-section').hide();
+				$('#section-equipe').hide();
+				$(".offres-section").hide();
+				$("#section-offres").hide();
+				$('.evenements-section').show();
+				$('#section-evenements').show();
+			});*/
+
+			$("#entreprise-navbar").click(function () {
+				$(".entreprise-section").show();
+				$("#section-entreprise").show();
+				$(".offres-section").hide();
+				$("#section-offres").hide();
+				$('.evenements-section').hide();
+				$('#section-evenements').hide();
+				$('.equipe-section').hide();
+				$('#section-equipe').hide();
+			});
+		});
+	</script>
+</body>
+
+</html>

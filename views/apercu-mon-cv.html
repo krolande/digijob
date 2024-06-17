@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Cv</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		body {
+			background: #c4c4c4;
+			font-size: 18px;
+			line-height: 20px;
+		}
+
+		.cv_wrapper {
+			display: flex;
+			width: 850px;
+			margin: 30px auto;
+			background: #fff;
+			padding: 5px;
+		}
+
+		.cv_wrapper .cv_left {
+			width: 265px;
+			background: #00957E;
+		}
+
+
+		.cv_wrapper .cv_left .cv_image {
+			height: 260px;
+			width: 100%;
+			object-fit: cover;
+
+		}
+
+		.cv_wrapper .cv_left .cv_image .img-fluid {
+			position: relative;
+			height: 270px;
+			width: 355px;
+			object-fit: cover;
+		}
+
+		.cv_wrapper .cv_title {
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 16px;
+			margin-bottom: 10px;
+			letter-spacing: 1px;
+		}
+
+		.cv_wrapper .cv_left .cv_info {
+			color: #19191a;
+		}
+
+		.cv_wrapper .cv_left .cv_bottom {
+			padding: 20px 30px;
+		}
+
+		.cv_wrapper .cv_item {
+			padding: 20px 0;
+			border-bottom: 3px solid #235BA8;
+		}
+
+		.cv_wrapper .cv_item:last-child {
+			border-bottom: 0;
+		}
+
+		.cv_wrapper .cv_left .cv_namerole {
+			display: none;
+		}
+
+		.cv_wrapper .cv_profil .name {
+			font-size: 20px;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-bottom: 5px;
+			letter-spacing: 1px;
+
+		}
+
+		.cv_wrapper .cv_left .cv_namerole .role {
+			color: #84838b;
+		}
+
+		.cv_wrapper .cv_left .cv_contact .cv_info:last-child {
+			margin-top: 10px;
+		}
+
+		.cv_wrapper .cv_left .cv_contact .cv_subtitle {
+			color: #fff;
+			margin-bottom: 2px;
+		}
+
+		.cv_wrapper .cv_left .cv_skills .skills_list {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 5px;
+		}
+
+		.cv_wrapper .cv_left .cv_skills .skills_list .skills_bar p {
+			position: relative;
+			width: 125px;
+			height: 15px;
+			background: #fff;
+			border-radius: 15px;
+		}
+
+		.cv_wrapper .cv_left .cv_skills .skills_list .skills_bar p span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #235BA8;
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+		}
+
+		.cv_wrapper .cv_right {
+			width: 65%;
+			padding: 20px 40px;
+			color: #26252d;
+		}
+
+		.cv_wrapper .cv_right .cv_namerole .name {
+			color: #26252d;
+			font-size: 32px;
+		}
+
+		.cv_wrapper .cv_right .cv_namerole .role {
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+
+		.cv_wrapper .cv_right .cv_item .cv_title {
+			color: #26252d;
+		}
+
+		.cv_wrapper .cv_right .cv_data {
+			display: flex;
+		}
+
+		.cv_wrapper .cv_right .cv_data .annee {
+			padding-right: 35px;
+			width: 115px;
+			position: relative;
+			text-transform: capitalize;
+		}
+
+		.cv_wrapper .cv_right .cv_data .content {
+			padding-left: 35px;
+			margin-bottom: 20px;
+			width: calc(100% - 115px);
+		}
+
+		.cv_wrapper .cv_right .cv_data .annee:before {
+			content: "";
+			position: absolute;
+			top: 5px;
+			right: 0;
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			border: 1px solid #26252d;
+			border-radius: 50%;
+		}
+
+		.cv_wrapper .cv_right .cv_data .annee:after {
+			content: "";
+			position: absolute;
+			top: 17px;
+			right: 4px;
+			width: 3px;
+			height: 90%;
+			background: #235BA8;
+		}
+
+		.cv_wrapper .cv_right .cv_data:last-child .annee:after {
+			display: none;
+		}
+
+		.cv_wrapper .cv_right .resmue_interests .cv_info {
+			display: flex;
+			justify-content: space-between;
+			text-align: center;
+		}
+
+		.cv_wrapper .cv_right .resmue_interests .interests .int_icon {
+			font-size: 38px;
+			color: #235BA8;
+			margin-bottom: 10px;
+		}
+
+
+		@media screen and (max-width: 800px) {
+			.cv_wrapper .cv_right .cv_namerole {
+				display: none;
+			}
+
+			.cv_wrapper .cv_left .cv_namerole {
+				display: block;
+			}
+
+			.cv_wrapper {
+				width: 95%;
+				margin: 10px auto;
+				flex-direction: column;
+			}
+
+			.cv_wrapper .cv_left,
+			.cv_wrapper .cv_right {
+				width: 100%;
+			}
+		}
+
+		@media screen and (max-width: 424px) {
+			.cv_wrapper .cv_right {
+				padding: 20px 30px;
+			}
+
+			.cv_wrapper .cv_right .cv_data {
+				flex-direction: column;
+			}
+
+			.cv_wrapper .cv_right .cv_data .annee {
+				padding: 0;
+				margin-bottom: 5px;
+				width: 100%;
+				color: #235BA8;
+			}
+
+			.cv_wrapper .cv_right .cv_data .annee:before,
+			.cv_wrapper .cv_right .cv_data .annee:after {
+				display: none;
+			}
+
+			.cv_wrapper .cv_right .cv_data .content {
+				width: 100%;
+				padding: 0;
+			}
+
+			.cv_wrapper .cv_right .resmue_interests .interests .int_icon {
+				font-size: 24px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="cv_wrapper" id="contentToPrint">
+		<div class="cv_left">
+			<div class="cv_image">
+				<img class="img-fluid" src="https://digijobs.asinyo.com/files/profil/{{ .Profil.Photo }}" alt="cv_image">
+			</div>
+			<div class="cv_bottom">
+				<!--<div class="cv_item cv_namerole">
+					<div class="name"></div>
+					<div class="role"></div>
+				</div>-->
+				<div class="cv_item cv_profil">
+					<div class="name">{{ .Profil.Nom}}  {{ .Profil.Prenoms}}</div>
+					<div class="role">{{.Profil.TitrePosteCv}}</div>
+				</div>
+				
+				<div class="cv_item cv_address">
+					<div class="cv_title">Adresse</div>
+					<div class="cv_info">
+						{{ .Profil.Adresse}}<br />
+						<br />
+					</div>
+				</div>
+				<div class="cv_item cv_langues">
+					<div class="cv_title">Langues</div>
+					{{range .LanguesUser}}
+					<div class="cv_info">
+						{{.Libelle}}<br />
+						<br />
+					</div>
+					{{end}}
+					
+				</div>
+				<!--<div class="cv_item cv_centreInteret">
+					<div class="cv_title">Centre d'interêt</div>
+					<div class="cv_info">
+						item<br />
+						<br />
+					</div>
+				</div>-->
+				<div class="cv_item cv_contact">
+					<div class="cv_title">Contact</div>
+					<div class="cv_info">
+						<div class="cv_subtitle">Téléphone:</div>
+						<div class="cv_subinfo">{{ .Profil.Indicatif }} {{ .Profil.NumeroTelephone }}</div>
+					</div>
+					<div class="cv_info">
+						<div class="cv_subtitle">Email</div>
+						<div class="cv_subinfo">{{ .Profil.Email }}</div>
+					</div>
+					<div class="cv_info">
+						<div class="cv_subtitle">Date De Naissance</div>
+						<div class="cv_subinfo">{{ .Profil.DateNaissance }}</div>
+					</div>
+				</div>
+				<div class="cv_item cv_skills">
+					<div class="cv_title">Compétence(s) Professionnelle(s)</div>
+					{{range .CompetenceProfessionnelle}}
+					<div class="cv_info">
+						<div class="skills_list">
+							<div class="skills_left">{{ .Titre }}</div>
+							<div class="skills_bar">
+								<p>
+									<span style="width: {{ .Pourcentage }}%"></span>
+								</p>
+							</div>
+						</div>
+					</div>
+					{{end}}
+				</div>
+			</div>
+		</div>
+		<div class="cv_right">
+			<div class="cv_item cv_profil">
+				<div class="cv_title">Profil</div>
+				<div class="cv_info">{{ .Profil.Description }} </div>
+			</div>
+			<div class="cv_item cv_formation">
+				<div class="cv_title">Formation:</div>
+				<div class="cv_info">
+					{{range .Formations}}
+					<div class="cv_data">
+						<div class="annee">{{ .MoisDebut }}-{{ .AnneeDebut }} - {{ if .MoisFin}}
+							{{.MoisFin}} {{.AnneeFin}} {{else}} {{.Now}} {{end}}</div>
+						<div class="content">
+							<p style="color: #235BA8; font-weight: bold; text-transform: uppercase;">{{ .TitreFormation }}</p>
+							<span style="text-transform: uppercase;">-{{ .NomEcole }}</span>
+							<p class="mt-2" style="color: #6a6a6c;">{{ .Description }}</p>
+						</div>
+					</div>
+					{{end}}
+				</div>
+			</div>
+			<div class="cv_item cv_experience">
+				<div class="cv_title">Experience(s) Professionnelle(s):</div>
+				<div class="cv_info">
+					{{range .ExperienceProfessionnelle}}
+					<div class="cv_data">
+						<div class="annee">{{ .MoisDebut }}-{{ .AnneeDebut }} à {{if .MoisFin}} {{
+							.MoisFin
+							}}-{{ .AnneeFin }} {{else}} {{.Now}} {{end}}</div>
+						<div class="content">
+							<p style="color: #235BA8; font-weight: bold; text-transform: uppercase;">{{ .TitreExperience }}</p>
+							<span style="text-transform: uppercase;">- {{ .NomEntreprise }}</span>
+							<p class="mt-2" style="color: #6a6a6c;">{{ .Description }}</p>
+						</div>
+					</div>
+					{{end}}
+				</div>
+			</div>
+			<div class="cv_item cv_experience">
+				<div class="cv_title">Prix et Certifications:</div>
+				<div class="cv_info">
+					{{range .PrixCertification}}
+					<div class="cv_data">
+						<div class="annee">{{ .DateObtention }}</div>
+						<div class="content">
+							<p style="color: #235BA8; font-weight: bold; text-transform: uppercase;">{{ .TitrePrix }}</p>
+							<span style="text-transform: uppercase;">- {{ .NomEtablissement }}</span>
+							<p class="mt-2" style="color: #6a6a6c;">{{ .Description }}</p>
+						</div>
+					</div>
+					{{end}}
+				</div>
+			</div>
+			<!--<div class="cv_item resmue_interests">
+			<div class="cv_title">Interests</div>
+			<div class="cv_info">
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-volleyball-ball"></i>
+					</div>
+					<div class="int_data">Volleyball</div>
+				</div>
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-book-open"></i>
+					</div>
+					<div class="int_data">Reading</div>
+				</div>
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-film"></i>
+					</div>
+					<div class="int_data">Movies</div>
+				</div>
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-biking"></i>
+					</div>
+					<div class="int_data">Riding</div>
+				</div>
+			</div>
+		</div>-->
+		</div>
+	</div>
+	<button onclick="Convert_HTML_To_PDF();" style="margin-bottom: 10px; margin-right: 10%; margin-left: 40%;padding: 5px 155px 5px 150px; text-align: center;  border-radius: 15px;">Télécharger</button>
+
+	<script src="views/assets/js/js/html2canvas.min.js"></script>
+
+	<script src="views/assets/js/js/jspdf.umd.js"></script>
+	<script>
+		window.jsPDF = window.jspdf.jsPDF;
+		// Convert HTML content to PDF
+		function Convert_HTML_To_PDF() {
+			var doc = new jsPDF();
+
+			// Source HTMLElement or a string containing HTML.
+			var elementHTML = document.querySelector("#contentToPrint");
+
+			doc.html(elementHTML, {
+				callback: function (doc) {
+					// Save the PDF
+					doc.save('document-html.pdf');
+				},
+				margin: [10, 10, 10, 10],
+				autoPaging: 'text',
+				x: 0,
+				y: 0,
+				width: 190, //target width in the PDF document
+				windowWidth: 900 //window width in CSS pixels
+			});
+		}
+	</script>
+</body>
+
+</html>

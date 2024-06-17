@@ -1,0 +1,170 @@
+/***********entreprise******************/
+.card-text {
+  padding-top: 12px;
+  color: #0e0d0d;
+  text-decoration: none;
+}
+.card-title {
+  margin: 0;
+  font-family: "poppins";
+  font-size: 18px;
+  font-weight: 500;
+  color: #235ba8;
+}.img {
+  margin-top: 15px;
+
+}
+
+.mapping {
+  width: 400px;
+}.page {
+  background-color: #F8F9FC;
+}
+
+.entreprise {
+  font-family: 'poppins';
+  font-size: 25px;
+}
+
+.entreprise-item {
+  margin-bottom: 30px;
+}
+
+.block-title {
+  background-color: #00957E;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 35px;
+  font-family: 'poppins';
+}
+/* Style pour la classe card */
+.card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(217, 229, 248);
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+  background-color: #ffffffc6;
+  -webkit-box-shadow: 0px 0px 15px 0px #f0f2f7;
+          box-shadow: 0px 0px 15px 0px #f0f2f7;
+  border-radius: 15px;
+  padding: 30px 25px;
+  margin-bottom: 25px;
+}
+
+/* Changement d'ombre au survol de la carte */
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.job-list-area .container-fluid {
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+}
+
+/*Pagination CSS*/
+.pagination-entre-event .page-numbers {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 2px;
+}
+/*================================================
+Pagination Area CSS
+=================================================*/
+.pagination-entre-event {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination-entre-event .page-numbers {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.13);
+          box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.13);
+  color: #646464;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  line-height: 40px;
+  position: relative;
+  margin: 0 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pagination-entre-event .page-numbers:hover, .pagination-entre-event .page-numbers.current {
+  color: #ffffff;
+  background-color: #00957E;
+}
+
+.pagination-entre-event .next {
+  color: #00957E;
+}
+
+.pagination-entre-event span {
+  color: #646464;
+  font-size: 16px;
+}
+
+.button {
+  background-color: #00957E;
+  /* Couleur de fond bleue */
+  color: #fff;
+  /* Couleur du texte en blanc */
+  font-family: Poppins, sans-serif;
+  /* Police de caractères */
+  font-size: 16px;
+  /* Taille de police */
+  border-radius: 10px;
+  /* Coins arrondis */
+  padding: 10px;
+  /* Espacement intérieur (haut et bas, gauche et droite) */
+  cursor: pointer;
+  /* Curseur en pointeur */
+  transition: background-color 0.3s ease;
+  /* Transition pour le changement de couleur de fond */
+  border: none;
+  width: 100px;
+  margin: 0 auto;
+
+}
+
+button:hover {
+  background-color: #409cfd;
+}
+.price {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.price span {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #235ba8;
+  padding: 7px 12px;
+  border-radius: 10px;
+}
+.date {
+  float: left;
+  text-align: center;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.date h6 {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #a12c2f;
+}
+
+.date span {
+  display: block;
+  color: #1f272b;
+  font-size: 22px;
+  margin-top: 7px;
+}

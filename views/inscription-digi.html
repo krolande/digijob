@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Page de connexion</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    body {
+      background-color: #4b70e2;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      background-color: #ecf0f3;
+      color: #a0a5a8;
+    }
+
+    .main {
+      position: relative;
+      width: 1090px;
+      min-width: 1000px;
+      min-height: 600px;
+      height: 800px;
+      padding: 25px;
+      background-color: #ecf0f3;
+      box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      width: 600px;
+      height: 100%;
+      padding: 25px;
+      background-color: #ecf0f3;
+      transition: 1.25s;
+    }
+
+    .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    .form__icon {
+      object-fit: contain;
+      width: 30px;
+      margin: 0 5px;
+      opacity: 0.5;
+      transition: 0.15s;
+    }
+
+    .form__icon:hover {
+      opacity: 1;
+      transition: 0.15s;
+      cursor: pointer;
+    }
+
+    .form__input {
+      width: 350px;
+      height: 40px;
+      margin: 4px 0;
+      padding-left: 25px;
+      font-size: 13px;
+      letter-spacing: 0.15px;
+      border: none;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ecf0f3;
+      transition: 0.25s ease;
+      border-radius: 8px;
+      box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+    }
+
+    .form__input2 {
+      width: 250px;
+      height: 40px;
+      margin: 4px 0;
+      padding-left: 25px;
+      font-size: 13px;
+      letter-spacing: 0.15px;
+      border: none;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ecf0f3;
+      transition: 0.25s ease;
+      border-radius: 8px;
+      box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin: 4px 0;
+      font-size: 13px;
+      letter-spacing: 0.15px;
+      border: none;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ecf0f3;
+      transition: 0.25s ease;
+      border-radius: 8px;
+      box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+    }
+
+    .form__input:focus {
+      box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+    }
+
+    .form__span {
+      margin-top: 30px;
+      margin-bottom: 12px;
+    }
+
+    .title {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 3;
+      color: #181818;
+    }
+
+    .button {
+      width: 180px;
+      height: 50px;
+      border-radius: 25px;
+      margin-top: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1.15px;
+      background-color: #4b70e2;
+      color: #f9f9f9;
+      box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+      border: none;
+      outline: none;
+    }
+
+    .a-container {
+      z-index: 100;
+      left: calc(100% - 630px);
+    }
+
+    .form__link {
+      color: #181818;
+      font-size: 15px;
+      margin-top: 25px;
+      border-bottom: 1px solid #a0a5a8;
+      line-height: 2;
+    }
+
+    .b-container {
+      left: calc(100% - 600px);
+      z-index: 0;
+    }
+
+    .switch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 400px;
+      padding: 50px;
+      z-index: 200;
+      transition: 1.25s;
+      background-color: #ecf0f3;
+      overflow: hidden;
+      box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #f9f9f9;
+    }
+
+    .switch__circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background-color: #ecf0f3;
+      box-shadow: inset 8px 8px 12px #d1d9e6, inset -8px -8px 12px #f9f9f9;
+      bottom: -60%;
+      left: -60%;
+      transition: 1.25s;
+    }
+
+    .switch__circle--t {
+      top: -30%;
+      left: 60%;
+      width: 300px;
+      height: 300px;
+    }
+
+    .switch__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      width: 400px;
+      padding: 50px 55px;
+      transition: 1.25s;
+    }
+
+    .switch__button {
+      cursor: pointer;
+    }
+
+    .switch__button:hover {
+      box-shadow: 6px 6px 10px #d1d9e6, -6px -6px 10px #f9f9f9;
+      transform: scale(0.985);
+      transition: 0.25s;
+    }
+
+    .switch__button:active,
+    .switch__button:focus {
+      box-shadow: 2px 2px 6px #d1d9e6, -2px -2px 6px #f9f9f9;
+      transform: scale(0.97);
+      transition: 0.25s;
+    }
+
+    .is-txr {
+      left: calc(100% - 400px);
+      transition: 1.25s;
+      transform-origin: left;
+    }
+
+    .is-txl {
+      left: 0;
+      transition: 1.25s;
+      transform-origin: right;
+    }
+
+    .is-z200 {
+      z-index: 200;
+      transition: 1.25s;
+    }
+
+    .is-hidden {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      transition: 1.25s;
+    }
+
+    .is-gx {
+      animation: is-gx 1.25s;
+    }
+
+    @keyframes is-gx {
+
+      0%,
+      10%,
+      100% {
+        width: 400px;
+      }
+
+      30%,
+      50% {
+        width: 500px;
+      }
+    }
+
+    .description {
+      font-size: 14px;
+      letter-spacing: 0.25px;
+      text-align: center;
+      line-height: 1.6;
+
+    }
+
+    .required {
+      color: red;
+      margin-left: 5px;
+    }
+  </style>
+  <div class="main">
+    <div class="container a-container" id="a-container">
+      <form class="form" id="a-form" action="/register" method="post">
+        {{if .retour}}
+        <div class="alert alert-success">
+          {{ .retour}}
+        </div>
+        <hr />
+        {{end}}
+        <h2 class="title">Inscrivez-vous</h2>
+        <!--<span class="form__span">or use email for registration</span>-->
+        <div class="row g-2">
+          <div class="col-sm-6">
+            <label for="nom">Nom<span class="required">*</span>:</label>
+            <input type="text" class="form-control form__input2" id="nom" name="nom" required placeholder="Nom"
+              aria-label="First name">
+          </div>
+          <div class="col-md-6">
+            <label for="prenoms">Prénoms<span class="required">*</span>:</label>
+            <input type="text" class="form-control form__input2" placeholder="Prénoms" required aria-label="Prénoms" name="prenoms">
+          </div>
+
+          <div class="col-md-6">
+            <label for="username">Username<span class="required">*</span>:</label>
+            <input type="text" class="form-control form__input2" placeholder="Username" required aria-label="Prénoms" name="username">
+          </div>
+          
+          <div class="col-md-6">
+            <label for="email">E-mail<span class="required">*</span>:</label>
+            <input type="email" class="form-control form__input2" id="email" name="email" required placeholder="E-mail"
+              aria-label="E-mail">
+          </div>
+          <div class="col-md-6">
+            <label>Pays<span class="required">*</span>:</label>
+            <select id="country" name="pays" class="form-control form__input2 js-example-basic-multiple" required
+              ata-default="" data-flag="true">
+              <option value="" selected>Choisir</option>
+              <option country-code="+355" value="AL"> Albania</option>
+              <option country-code="+213" value="DZ"> Algeria</option>
+              <option country-code="+1" value="AS"> AmericanSamoa</option>
+              <option country-code="+376" value="AD"> Andorra</option>
+              <option country-code="+244" value="AO"> Angola</option>
+              <option country-code="+1264" value="AI"> Anguilla</option>
+              <option country-code="+672" value="AQ"> Antarctica</option>
+              <option country-code="+1268" value="AG"> AntiguaAndBarbuda</option>
+              <option country-code="+54" value="AR"> Argentina</option>
+              <option country-code="+374" value="AM"> Armenia</option>
+              <option country-code="+297" value="AW"> Aruba</option>
+              <option country-code="+61" value="AU"> Australia</option>
+              <option country-code="+43" value="AT"> Austria</option>
+              <option country-code="+994" value="AZ"> Azerbaijan</option>
+              <option country-code="+1242" value="BS"> Bahamas</option>
+              <option country-code="+973" value="BH"> Bahrain</option>
+              <option country-code="+880" value="BD"> Bangladesh</option>
+              <option country-code="+1246" value="BB"> Barbados</option>
+              <option country-code="+375" value="BY"> Belarus</option>
+              <option country-code="+32" value="BE"> Belgium</option>
+              <option country-code="+501" value="BZ"> Belize</option>
+              <option country-code="+229" value="BJ"> Benin</option>
+              <option country-code="+1441" value="BM"> Bermuda</option>
+              <option country-code="+975" value="BT"> Bhutan</option>
+              <option country-code="+591" value="BO"> Bolivia</option>
+              <option country-code="+387" value="BA"> BosniaAndHerzegovina</option>
+              <option country-code="+267" value="BW"> Botswana</option>
+              <option country-code="+55" value="BR"> Brazil</option>
+              <option country-code="+246" value="IO"> BritishIndianOceanTerritory</option>
+              <option country-code="+673" value="BN"> BruneiDarussalam</option>
+              <option country-code="+359" value="BG"> Bulgaria</option>
+              <option country-code="+226" value="BF"> BurkinaFaso</option>
+              <option country-code="+257" value="BI"> Burundi</option>
+              <option country-code="+855" value="KH"> Cambodia</option>
+              <option country-code="+237" value="CM"> Cameroon</option>
+              <option country-code="+1" value="CA"> Canada</option>
+              <option country-code="+238" value="CV"> CapeVerde</option>
+              <option country-code="+1345" value="KY"> CaymanIslands</option>
+              <option country-code="+236" value="CF"> CentralAfricanRepublic</option>
+              <option country-code="+235" value="TD"> Chad</option>
+              <option country-code="+56" value="CL"> Chile</option>
+              <option country-code="+86" value="CN"> China</option>
+              <option country-code="+61" value="CX"> ChristmasIsland</option>
+              <option country-code="+61" value="CC"> Cocos(Keeling)Islands</option>
+              <option country-code="+57" value="CO"> Colombia</option>
+              <option country-code="+269" value="KM"> Comoros</option>
+              <option country-code="+242" value="CG"> Congo</option>
+              <option country-code="+682" value="CK"> CookIslands</option>
+              <option country-code="+506" value="CR"> CostaRica</option>
+              <option country-code="+225" value="CI"> Cote d'Ivoire</option>
+              <option country-code="+385" value="HR"> Croatia</option>
+              <option country-code="+53" value="CU"> Cuba</option>
+              <option country-code="FALSE" value="CY"> CyprusNorth</option>
+              <option country-code="+357" value="CY"> CyprusSouth</option>
+              <option country-code="+42" value="CZ"> CzechRepublic</option>
+              <option country-code="+45" value="DK"> Denmark</option>
+              <option country-code="+253" value="DJ"> Djibouti</option>
+              <option country-code="+1809" value="DM"> Dominica</option>
+              <option country-code="+1809" value="DO"> DominicanRepublic</option>
+              <option country-code="+593" value="EC"> Ecuador</option>
+              <option country-code="+20" value="EG"> Egypt</option>
+              <option country-code="+503" value="SV"> ElSalvador</option>
+              <option country-code="+240" value="GQ"> EquatorialGuinea</option>
+              <option country-code="+291" value="ER"> Eritrea</option>
+              <option country-code="+372" value="EE"> Estonia</option>
+              <option country-code="+251" value="ET"> Ethiopia</option>
+              <option country-code="+500" value="FK"> Falkland Islands(Malvinas)</option>
+              <option country-code="+298" value="FO"> FaroeIslands</option>
+              <option country-code="+679" value="FJ"> Fiji</option>
+              <option country-code="+358" value="FI"> Finland</option>
+              <option country-code="+33" value="FR"> France</option>
+              <option country-code="+594" value="GF"> FrenchGuiana</option>
+              <option country-code="+689" value="PF"> FrenchPolynesia</option>
+              <option country-code="+241" value="GA"> Gabon</option>
+              <option country-code="+220" value="GM"> Gambia</option>
+              <option country-code="+7880" value="GE"> Georgia</option>
+              <option country-code="+49" value="DE"> Germany</option>
+              <option country-code="+233" value="GH"> Ghana</option>
+              <option country-code="+350" value="GI"> Gibraltar</option>
+              <option country-code="+30" value="GR"> Greece</option>
+              <option country-code="+299" value="GL"> Greenland</option>
+              <option country-code="+1473" value="GD"> Grenada</option>
+              <option country-code="+590" value="GP"> Guadeloupe</option>
+              <option country-code="+671" value="GU"> Guam</option>
+              <option country-code="+502" value="GT"> Guatemala</option>
+              <option country-code="+44" value="GG"> Guernsey</option>
+              <option country-code="+224" value="GN"> Guinea</option>
+              <option country-code="+245" value="GW"> Guinea-Bissau</option>
+              <option country-code="+592" value="GY"> Guyana</option>
+              <option country-code="+509" value="HT"> Haiti</option>
+              <option country-code="+504" value="HN"> Honduras</option>
+              <option country-code="+852" value="HK"> HongKong</option>
+              <option country-code="+36" value="HU"> Hungary</option>
+              <option country-code="+354" value="IS"> Iceland</option>
+              <option country-code="+91" value="IN"> India</option>
+              <option country-code="+62" value="ID"> Indonesia</option>
+              <option country-code="+98" value="IR"> Iran</option>
+              <option country-code="+964" value="IQ"> Iraq</option>
+              <option country-code="+353" value="IE"> Ireland</option>
+              <option country-code="+972" value="IL"> Israel</option>
+              <option country-code="+39" value="IT"> Italy</option>
+              <option country-code="+1876" value="JM"> Jamaica</option>
+              <option country-code="+81" value="JP"> Japan</option>
+              <option country-code="+44" value="JE"> Jersey</option>
+              <option country-code="+962" value="JO"> Jordan</option>
+              <option country-code="+7" value="KZ"> Kazakhstan</option>
+              <option country-code="+254" value="KE"> Kenya</option>
+              <option country-code="+686" value="KI"> Kiribati</option>
+              <option country-code="+850" value="KP"> KoreaNorth</option>
+              <option country-code="+82" value="KR"> KoreaSouth</option>
+              <option country-code="+965" value="KW"> Kuwait</option>
+              <option country-code="+996" value="KG"> Kyrgyzstan</option>
+              <option country-code="+856" value="LA"> Laos</option>
+              <option country-code="+371" value="LV"> Latvia</option>
+              <option country-code="+961" value="LB"> Lebanon</option>
+              <option country-code="+266" value="LS"> Lesotho</option>
+              <option country-code="+231" value="LR"> Liberia</option>
+              <option country-code="+218" value="LY"> LibyanArabJamahiriya</option>
+              <option country-code="+417" value="LI"> Liechtenstein</option>
+              <option country-code="+370" value="LT"> Lithuania </option>
+              <option country-code="+352" value="LU"> Luxembourg</option>
+              <option country-code="+853" value="MO"> Macao</option>
+              <option country-code="+389" value="MK"> Macedonia</option>
+              <option country-code="+261" value="MG"> Madagascar</option>
+              <option country-code="+265" value="MW"> Malawi</option>
+              <option country-code="+60" value="MY"> Malaysia</option>
+              <option country-code="+960" value="MV"> Maldives</option>
+              <option country-code="+223" value="ML"> Mali</option>
+              <option country-code="+356" value="MT"> Malta</option>
+              <option country-code="+692" value="MH"> MarshallIslands</option>
+              <option country-code="+596" value="MQ"> Martinique</option>
+              <option country-code="+222" value="MR"> Mauritania</option>
+              <option country-code="+230" value="MU"> Mauritius</option>
+              <option country-code="+269" value="YT"> Mayotte</option>
+              <option country-code="+52" value="MX"> Mexico</option>
+              <option country-code="+691" value="FM"> Micronesia</option>
+              <option country-code="+373" value="MD"> Moldova</option>
+              <option country-code="+377" value="MC"> Monaco</option>
+              <option country-code="+976" value="MN"> Mongolia</option>
+              <option country-code="+1664" value="ME"> Montenegro</option>
+              <option country-code="+1" value="MS"> Montserrat</option>
+              <option country-code="+212" value="MA"> Morocco</option>
+              <option country-code="+258" value="MZ"> Mozambique</option>
+              <option country-code="+95" value="MM"> Myanmar</option>
+              <option country-code="+264" value="NA"> Namibia</option>
+              <option country-code="+674" value="NR"> Nauru</option>
+              <option country-code="+977" value="NP"> Nepal</option>
+              <option country-code="+31" value="NL"> Netherlands</option>
+              <option country-code="+599" value="AN"> NetherlandsAntilles</option>
+              <option country-code="+687" value="NC"> NewCaledonia</option>
+              <option country-code="+64" value="NZ"> NewZealand</option>
+              <option country-code="+505" value="NI"> Nicaragua</option>
+              <option country-code="+227" value="NE"> Niger</option>
+              <option country-code="+234" value="NG"> Nigeria</option>
+              <option country-code="+683" value="NU"> Niue</option>
+              <option country-code="+672" value="NF"> NorfolkIsland</option>
+              <option country-code="+670" value="MP"> NorthernMarianaIslands</option>
+              <option country-code="+47" value="NO"> Norway</option>
+              <option country-code="+968" value="OM"> Oman</option>
+              <option country-code="+92" value="PK"> Pakistan</option>
+              <option country-code="+680" value="PW"> Palau</option>
+              <option country-code="+507" value="PA"> Panama</option>
+              <option country-code="+675" value="PG"> PapuaNewGuinea</option>
+              <option country-code="+595" value="PY"> Paraguay</option>
+              <option country-code="+51" value="PE"> Peru</option>
+              <option country-code="+63" value="PH"> Philippines</option>
+              <option country-code="+48" value="PL"> Poland</option>
+              <option country-code="+351" value="PT"> Portugal</option>
+              <option country-code="+1787" value="PR"> PuertoRico</option>
+              <option country-code="+974" value="QA"> Qatar</option>
+              <option country-code="+262" value="RE"> Reunion</option>
+              <option country-code="+40" value="RO"> Romania</option>
+              <option country-code="+7" value="RU"> RussianFederation</option>
+              <option country-code="+250" value="RW"> Rwanda</option>
+              <option country-code="+378" value="SM"> SanMarino</option>
+              <option country-code="+239" value="ST"> SaoTomeAndPrincipe</option>
+              <option country-code="+966" value="SA"> SaudiArabia</option>
+              <option country-code="+221" value="SN"> Senegal</option>
+              <option country-code="+381" value="RS"> Serbia</option>
+              <option country-code="+248" value="SC"> Seychelles</option>
+              <option country-code="+232" value="SL"> SierraLeone</option>
+              <option country-code="+232" value="SG"> Singapore</option>
+              <option country-code="+421" value="SK"> SlovakRepublic</option>
+              <option country-code="+386" value="SI"> Slovenia</option>
+              <option country-code="+677" value="SB"> SolomonIslands</option>
+              <option country-code="+252" value="SO"> Somalia</option>
+              <option country-code="+27" value="ZA"> SouthAfrica</option>
+              <option country-code="+34" value="ES"> Spain</option>
+              <option country-code="+94" value="LK"> SriLanka</option>
+              <option country-code="+249" value="SD"> Sudan</option>
+              <option country-code="+597" value="SR"> Suriname</option>
+              <option country-code="+268" value="SZ"> Swaziland</option>
+              <option country-code="+46" value="SE"> Sweden</option>
+              <option country-code="+41" value="CH"> Switzerland</option>
+              <option country-code="+963" value="SY"> SyrianArabRepublic</option>
+              <option country-code="+886" value="TW"> Taiwan</option>
+              <option country-code="+7" value="TJ"> Tajikistan</option>
+              <option country-code="+66" value="TH"> Thailand</option>
+              <option country-code="+228" value="TG"> Togo</option>
+              <option country-code="+676" value="TO"> Tonga</option>
+              <option country-code="+1868" value="TT"> TrinidadAndTobago</option>
+              <option country-code="+216" value="TN"> Tunisia</option>
+              <option country-code="+90" value="TR"> Turkey</option>
+              <option country-code="+7" value="TM"> Turkmenistan</option>
+              <option country-code="+1649" value="TC"> TurksAndCaicosIslands</option>
+              <option country-code="+688" value="TV"> Tuvalu</option>
+              <option country-code="+256" value="UG"> Uganda</option>
+              <option country-code="+380" value="UA"> Ukraine</option>
+              <option country-code="+971" value="AE"> UnitedArabEmirates</option>
+              <option country-code="+44" value="GB"> UnitedKingdom</option>
+              <option country-code="+1" value="US"> UnitedStates</option>
+              <option country-code="+598" value="UY"> Uruguay</option>
+              <option country-code="+998" value="UZ"> Uzbekistan</option>
+              <option country-code="+678" value="VU"> Vanuatu</option>
+              <option country-code="+58" value="VE"> Venezuela</option>
+              <option country-code="+84" value="VN"> VietNam</option>
+              <option country-code="+1" value="VG"> VirginIslands},British</option>
+              <option country-code="+1" value="VI"> VirginIslands},U.S.</option>
+              <option country-code="+681" value="WF"> WallisAndFutuna</option>
+              <option country-code="+212" value="EH"> WesternSahara</option>
+              <option country-code="+967" value="YE"> Yemen</option>
+              <option country-code="+260" value="ZM"> Zambia</option>
+              <option country-code="+263" value="ZW"> Zimbabwe</option>
+
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label>Ville<span class="required">*</span>:</label>
+            <input type="text" class="form-control form__input2" name="ville">
+          </div>
+          <div class="col-md-6">
+            <label for="telNo">Téléphone<span class="required">*</span>:</label>
+            <div class="input-group" data-target-input="nearest">
+              <div class="input-group-append col-md-3 d-flex">
+                <input type="text" id="country_phone_code" value="" name="indicatif"
+                  class="form-control new-form-control form__input2" value="+225" data-flag="true" readonly="">
+              </div>
+              <input type="tel" class="form-control form__input2" value="" id="telNo" size="20" minlength="10"
+                maxlength="20" name="numero" placeholder="Numéro">
+            </div>
+          </div>
+          <div class="col-auto">
+            <label for="autoSizingInputGroup">Mot de passe<span class="required">*</span>:</label>
+            <div class="input-group">
+              <input type="password" name="password" class="form-control form__input2 password" id="autoSizingInputGroup" placeholder="Mot de passe"
+                required>
+              <div class="input-group-text icon" onclick="password_show_hide();"><i class="fas fa-eye"
+                  id="show_eye_password"></i>
+                <i class="fas fa-eye-slash d-none" id="hide_eye_password"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto mx-3">
+            <label for="autoSizingInputGroup">Confirmer le mot de passe<span class="required">*</span>:</label>
+            <div class="input-group">
+              <input type="password" class="form-control form__input2 confirmer" name="cpassword" id="autoSizingInputGroup"
+                placeholder="Confirmer le mot de passe" required>
+              <div class="input-group-text icon" onclick="confirm_password_hide_show();"><i class="fas fa-eye"
+                  id="show_eye_password"></i>
+                <i class="fas fa-eye-slash d-none" id="hide_eye_password"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-12 mt-3">
+          <div class="form-check">
+            <input class="form-check-input" name="autorisation" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              J'accepte que mes données personnelles soient collectées et traitées conformément aux
+      réglementations en vigueur.
+            </label>
+          </div>
+        </div>-->
+        <button class="button" type="submit" value="Soumettre">INSCRIPTION</button>
+        <div class="text-center fs-6 mt-4">
+          <a href="/loginDigicodeuses">Vous avez déjà un compte?</a> <a href="/loginDigicodeuses">Connectez-vous!</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="switch" id="switch-cnt" style="background-color: #235BA8;">
+      <div class="switch__container" id="switch-c1">
+        <h1 class="title">Bienvenue!</h1>
+        <p class="description text-white fs-5">Inscrivez-vous pour commencer votre parcours</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <script>
+    function password_show_hide() {
+      var x = document.querySelector(".password");
+      var show_eye = document.getElementById("show_eye_password");
+      var hide_eye = document.getElementById("hide_eye_password");
+      hide_eye.classList.remove("d-none");
+      if (x.type === "password") {
+        x.type = "text";
+        show_eye.style.display = "none";
+        hide_eye.style.display = "block";
+      } else {
+        x.type = "password";
+        show_eye.style.display = "block";
+        hide_eye.style.display = "none";
+      }
+    }
+
+    function confirm_password_hide_show() {
+      var x = document.querySelector(".confirmer");
+      var show_eye = document.getElementById("show_eye_confirmer");
+      var hide_eye = document.getElementById("hide_eye_confirmer");
+      hide_eye.classList.remove("d-none");
+      if (x.type === "password") {
+        x.type = "text";
+        show_eye.style.display = "none";
+        hide_eye.style.display = "block";
+      } else {
+        x.type = "password";
+        show_eye.style.display = "block";
+        hide_eye.style.display = "none";
+      }
+    }
+  </script>
+  <script>
+    $('#country').on('change', function () {
+      var getCountryCode = $(this).find('option:selected').attr('country-code');
+      //alert(getCountryCode);
+      document.getElementById("country_phone_code").value = getCountryCode;
+    });
+  </script>
+</body>
+
+</html>

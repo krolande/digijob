@@ -1,0 +1,394 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="Site keywords here">
+  <meta name="description" content="">
+  <meta name='copyright' content=''>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Détails offre</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="views/assets/css/font-awesome.min.css">
+  <!-- Slicknav -->
+  <link rel="stylesheet" href="views/assets/css/slicknav.min.css">
+  <!-- Medipro CSS -->
+  <link rel="stylesheet" href="views/assets/css/normalize.css">
+  <link rel="stylesheet" href="views/assets/css/style.css">
+  <link rel="stylesheet" href="views/assets/css/responsive.css">
+  <link rel="stylesheet" href="views/assets/css/digijob.css">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+
+      <div class="indicator">
+        <svg width="70px" height="15px">
+          <text x="0" y="15" fill="white">DIGIJOB</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- End Preloader -->
+  <!-- Header Area -->
+  <header class="header">
+    <!-- Header Inner -->
+    <div class="header-inner">
+      <div class="container">
+        <div class="inner">
+          <div class="row">
+
+            <div class="col-lg-2 col-md-3 col-12">
+              <!-- Start Logo -->
+              <div class="logo">
+                <a href="index.html">DIGIJOB</a>
+              </div>
+              <!-- End Logo -->
+              <!-- Mobile Nav -->
+              <div class="mobile-nav"></div>
+              <!-- End Mobile Nav -->
+            </div>
+            <div class="col-lg-10 col-md-9 col-12">
+              <!-- Main Menu -->
+              <div class="main-menu" style="float: right;">
+                <nav class="navigation">
+                  <ul class="nav menu">
+                    <li><a href="/acceuil">Mon espace</a>
+                    </li>
+                    <li><a class="nav-link scrollto" href="/allCandidature">Mes candidatures</a>
+                    </li>
+                    <li><a class="nav-link scrollto" href="/Updateprofile">Mon profil et Cv</a></li>
+                    <li class="active"><a class="nav-link scrollto" href="/allOffres">Offres</a></li>
+                    <li><a class="nav-link scrollto" href="/allEntreprises">Entreprises</a></li>
+                    <li><a class="nav-link scrollto" href="/allEvenement">Evènements</a></li>
+                    <li class="slicknav_parent slicknav_open user">
+                      <a href="#" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><i class="bi bi-person-circle" style="font-size: 1.2rem;"></i>
+                      </a>
+                      <ul class="dropdown" role="menu" aria-hidden="false" style="">
+                         <!--<li><a class="dropdown-item" href="#"><i class="bi bi-gear mx-2"
+                          style="font-size: 1.2rem;"></i>Paramètres</a></li>-->
+                        <li><a class="dropdown-item" style="color: red;" href="/logout"><i class="bi bi-power mx-2"
+                              style="font-size: 1.2rem; color: red;"></i>Déconnexion</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <!--/ End Main Menu -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Header Inner -->
+  </header>
+  <!-- End Header Area -->
+
+  <div class="container">
+
+    <div class="row justify-content-center mt-5 m-2">
+      <div class="col-lg-5 col-md-6">
+        <div class="single-job-list-box">
+          <div class="" role="button" tabindex="0" data-testid="info-entreprise">
+            <figure class="media-container">
+              <img width="760" alt="Découvrir l'entreprise en vidéo!"
+                src="https://digijobs.asinyo.com/files/logoEntreprise/{{ .LogoEntreprise }}" class="" loading="info"
+                style="object-fit: cover;">
+            </figure>
+          </div>
+          <!--<div class="job-information">
+            <div class="company-logo">
+              <a href=""><img
+                  src="http://localhost:12000/files/logoEntreprise/{{ .LogoEntreprise }}" alt="image"></a>
+            </div>
+            <h3>
+              <a href="">{{ .NomEntreprise }}</a>
+            </h3>
+            <span>Taille Entreprise</span>
+
+            <div class="bookmark-btn">
+              <i class="bi bi-star"></i>
+              </div>
+
+              <div class="hover-bookmark-btn">
+                <i class="bi bi-star-fill"></i>
+              </div>
+          </div>-->
+          <div class="mt-4">
+            <!--<p>Slogan</p>-->
+            <p>{{.TailleEntreprise}}</p>
+            <h3>
+              <a href="">{{ .NomEntreprise }}</a>
+            </h3>
+          </div>
+          <div class="">
+            <h6 class="mt-4 mb-3"><strong>A propos de Nous</strong></h6>
+            <p>{{.DescriptionEntreprise}}</p>
+          </div>
+
+          <div class="media" style="margin-top: 2rem; display: grid; gap: 1.5rem; border-radius: 15px;">
+            <h6><strong>Entreprise</strong></h6>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-3"><a href="#!"><i class="bi bi-envelope-fill" style="color: #235BA8;"></i><span
+                    class="text-secondary mx-3">{{.Email}}</span></a></li>
+              <li class="mb-3"><a href="#!"><i class="bi bi-telephone-fill" style="color: #235BA8;"></i> <span
+                    class="text-secondary mx-3">{{.NumeroEntreprise}}</span></a></li>
+              <li><a href="#!"><i class="bi bi-geo-alt-fill" style="color: #235BA8;"></i><span
+                    class="text-secondary mx-3">{{.Adresse}}</span></a>
+              </li>
+            </ul>
+            <!--<ul class="social-icon-style2 ps-0">
+                <li><a href="{{.Facebook}}" class="rounded-3"></P><i class="bi bi-facebook"></i></a></li>
+                <li><a href="{{.Twitter}}" class="rounded-3"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="#!" class="rounded-3"><i class="bi fa-youtube"></i></a></li> 
+                <li><a href="{{.Linkedin}}" class="rounded-3"><i class="bi bi-linkedin-in"></i></a></li>
+              </ul>-->
+            <!--<div class="card">
+                    <iframe frameborder="0" allowfullscreen="" class="card-img-top" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Découvrez L'entreprise en quelques minutes !" width="100%" height="100%" src="" id="widget2"></iframe>
+                    <div class="card-body">
+                      <p class="card-text">Découvrez L'entreprise en quelques minutes !</p>
+                    </div>
+              </div>-->
+            <!--<div class="" role="button" tabindex="0" data-testid="info-entreprise">
+                  <figure class="media-container">
+                      <img sizes="(max-width: 768px) 100vw, (max-width: 1280px) 66vw, 50vw" height="540" width="960" alt="Découvrir l'entreprise en vidéo!" src="http://localhost:12000/files/logoEntreprise/{{ .LogoEntreprise }}" class="" loading="info">
+                  </figure>
+              </div>-->
+          </div>
+          <div class="job-btn d-flex justify-content-center">
+            <a href="/detailEntreprises?id={{.IdE}}" class="text-center btn text-white"
+              style="background-color: #00957E;">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-12">
+        <div class="ps-lg-1-6 ps-xl-5">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="mb-5 wow fadeIn">
+                <div class="text-start mb-1-6 wow fadeIn">
+                  <h4 class="mb-0">{{.TitrePoste}}</h4>
+                </div>
+                <ul class="location-information mt-4" style="color: #757575;">
+                  <li><i class="bi bi-bag"></i> Type de contrat : <span class="text-danger mx-2">{{ .TypeContrat
+                      }}</span></li>
+                  <li><i class="bi bi-geo-alt"></i> Lieu : <span class="text-danger mx-2">{{.Ville}}</span></li>
+                  <li><i class="bi bi-stopwatch"></i> Publiée le {{.CreatedAtE}}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="job-btn d-flex justify-content-center">
+                <a href="/candidatureOffreGenerale?id={{.Id}}" class="text-center btn text-white float-end"
+                  style="background-color: #00957E; border-radius:7px;">Postuler maintenant</a>
+              </div>
+            </div>
+          </div>
+          <hr class="p-1" style="background: #235BA8;">
+          <div class="wow fadeIn">
+            <div class="text-start mb-1-6 wow fadeIn">
+              <h4 class="mb-3">Description du poste</h4>
+            </div>
+            <p class="mb-4">{{.DescriptionPoste}}</p>
+          </div>
+          <div class="wow fadeIn">
+            <div class="text-start mb-1-6 wow fadeIn">
+              <h4 class="mb-3">Missions du poste</h4>
+            </div>
+            <ul class="mb-4">
+              {{range .TabMissionPoste}}
+              <li>{{.MissionPoste}}</li>
+              {{end}}
+            </ul>
+
+          </div>
+          <div class="wow fadeIn">
+            <div class="text-start mb-1-6 wow fadeIn">
+              <h4 class="mb-3">Profil recherché</h4>
+            </div>
+            <ul class="mb-4">
+              {{range .TabProfilRecherche}}
+              <li>{{.ProfilPoste}}</li>
+              {{end}}
+            </ul>
+          </div>
+          <div class="wow fadeIn">
+            <div class="text-start mb-1-6 wow fadeIn">
+              <h4 class="mb-3">Compétences clés</h4>
+            </div>
+            <ul class="mb-4">
+              {{range .TabLibelle}}
+              <li>{{.Libelle}}</li>
+              {{end}}
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="wow fadeIn">
+                <div class="text-start mb-1-6 wow fadeIn">
+                  <h4 class="mb-3">Année d'expérience</h4>
+                </div>
+                <p>{{.AnneeExperience}}</p>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="job-btn d-flex justify-content-center">
+                <a href="/candidatureOffreGenerale?id={{.Id}}" class="text-center btn text-white float-end"
+                  style="background-color: #00957E; border-radius:7px;">Postuler maintenant</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Area -->
+  <footer id="footer" class="footer ">
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer">
+              <h2>A propos de nous</h2>
+              <p>Que vous soyez en quête d'une aventure digitale pour propulser votre carrière
+                ou que vous cherchiez à enrichir votre équipe avec les meilleurs talents du numérique,
+                vous avez frappé à la bonne porte.</p>
+              <!-- Social -->
+              <ul class="social">
+                <li><a href="https://www.facebook.com/digifemmes1" target="_blank"><i class="bi bi-facebook"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/company/digifemmes/" target="_blank"><i
+                      class="bi bi-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/digifemmes/" target="_blank"><i class="bi bi-instagram"></i></a>
+                </li>
+                <li><a href="https://twitter.com/DigiFemmes" target="_blank"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="https://www.tiktok.com/@digifemmes" target="_blank"><i class="bi bi-tiktok"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCGss3P1qjAI_nFl7twQu0gw" target="_blank"><i
+                      class="bi bi-youtube"></i></a></li>
+              </ul>
+              <!-- End Social -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer f-link">
+              <h2>Liens rapides</h2>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <ul>
+                    <li><a href="#hero"><i class="fa fa-caret-right" aria-hidden="true"></i>Accueil</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>A Propos de
+                        nous</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Entreprises</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Offres</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Evènement</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                  <ul>
+                    <li><a href="#testimonial"><i class="fa fa-caret-right" aria-hidden="true"></i>Temoignages</a></li>
+                    <li><a href="#faq"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Nous
+                        Contacter</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer">
+              <h2>Newsletter</h2>
+              <p>Abonnez-vous à notre newsletter pour obtenir des nouvelles actualités dans votre boîte de
+                réception.</p>
+              <form action="#" method="get" target="_blank" class="newsletter-inner">
+                <input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your email address'" required="" type="email">
+                <button class="button"><i class="bi bi-send" style="color: #235BA8;"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Footer Top -->
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-12">
+            <div class="copyright-content">
+              <p>© Copyright 2023 | All Rights Reserved by <a href="https://www.digifemmes.com/digifemmes-academy"
+                  target="_blank">DigiFemmes</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Copyright -->
+  </footer>
+  <!--/ End Footer Area -->
+
+  <!-- jquery Min JS -->
+  <script src="views/assets/js/jquery.min.js"></script>
+  <!-- jquery Migrate JS -->
+  <script src="views/assets/js/jquery-migrate-3.0.0.js"></script>
+
+  <script src="views/assets/js/popper.min.js"></script>
+  <!-- Jquery Nav JS -->
+  <script src="views/assets/js/jquery.nav.js"></script>
+  <!-- Slicknav JS -->
+  <script src="views/assets/js/slicknav.min.js"></script>
+  <!-- ScrollUp JS -->
+  <script src="views/assets/js/jquery.scrollUp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Counter Up CDN JS -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <!-- Main JS -->
+  <script src="views/assets/js/main.js"></script>
+  <script src="views/assets/js/pagination.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.cv-upload').hide();
+      //$('.type_cs').hide();
+      $(".cv-upload-check").click(function () {
+        $(".cv-upload").show();
+        $(".cv-profil").hide();
+      });
+
+      $(".cv-profil-check").click(function () {
+        $(".cv-profil").show();
+        $(".cv-upload").hide();
+      });
+    });
+  </script>
+</body>
+
+</html>

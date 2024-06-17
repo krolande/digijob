@@ -1,0 +1,15 @@
+https://freefrontend.com/css-testimonials/
+ASMR Programming - Responsive Admin Dashboard with Light & Dark Mode - No Talking
+https://www.youtube.com/watch?v=YJTKlAvbDo4
+
+
+//BD
+
+https://cloud.google.com/spanner/docs/foreign-keys/how-to?hl=fr
+
+https://freefrontend.dev/code/bootstrap/hero/
+https://freefrontend.com/
+https://mdbootstrap.com/docs/standard/navigation/headers/
+https://webdevstation.com/posts/one-of-thee-easiest-ways-to-host-go-web-apps/
+https://www.tutorialspoint.com/how-to-create-a-list-grid-view-with-css-and-javascript
+https://www.ibrahima-ndaw.com/fr/blog/build-a-search-filter-with-javascript/

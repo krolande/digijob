@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Go session Auth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .container {
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form action="/register" method="post">
+            <h4>SING UP</h4>
+            <p>Veuillez remplir le formulaire pour vous inscrire</p>
+            <hr />
+
+            {{if .retour}}
+            <div class="alert alert-success">
+                {{ .retour}}
+            </div>
+            <hr />
+            {{end}}
+            <div class="form-group">
+                <label for="">Nom</label>
+                <input type="text" name="nom"
+                    class="form-control {{if .validation.Nom}} is-invalid {{end}}">
+                <div class="invalid-feedback">
+                    {{.validation.Nom}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Prenoms</label>
+                <input type="text" name="prenoms"
+                    class="form-control {{if .validation.Prenoms}} is-invalid {{end}}">
+                <div class="invalid-feedback">
+                    {{.validation.Prenoms}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">E-mail</label>
+                <input type="text" name="email" class="form-control {{if .validation.Email}} is-invalid {{end}}">
+                <div class="invalid-feedback">
+                    {{.validation.Email}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" name="username" class="form-control {{if .validation.Username}} is-invalid {{end}}">
+                <div class="invalid-feedback">
+                    {{.validation.Username}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" name="password"
+                    class="form-control {{if .validation.Password}} is-invalid {{end}}">
+                <div class="invalid-feedback">
+                    {{.validation.Password}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Confirm password</label>
+                <input type="password" name="cpassword"
+                    class="form-control {{if .validation.Cpassword}} is-invalid {{end}}">
+                <div class="invalid-feedback">
+                    {{.validation.Cpassword}}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">SING UP</button>
+            <hr />
+
+            <center>
+                <p>Vous avez un compte? <a href="/login">Connectez-vous?</a></p>
+            </center>
+        </form>
+    </div>
+
+</body>
+
+</html>

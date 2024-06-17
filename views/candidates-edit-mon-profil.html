@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="Job Board Site Web" />
+  <meta name="description" content="DigiJob" />
+  <meta name="author" content="digijob.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Mon profil et CV</title>
+
+  <!-- Favicon -->
+  <link href="" rel="shortcut icon" />
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="views/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="views/assets/css/flaticon/flaticon.css" />
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature)-->
+  <link rel="stylesheet" href="views/assets/css/datetimepicker/datetimepicker.min.css" />
+  <link rel="stylesheet" href="views/assets/css/select2/select2.min.css" />
+  <link rel="stylesheet" href="views/assets/css/select2-bootstrap-theme/select2-bootstrap.min.css">
+
+  <!-- Slicknav -->
+  <link rel="stylesheet" href="views/assets/css/slicknav.min.css">
+  <!-- DigiJob CSS -->
+  <link rel="stylesheet" href="views/assets/css/style1.css" />
+  <link rel="stylesheet" href="views/assets/css/responsive.css">
+
+
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+
+      <div class="indicator">
+        <svg width="70px" height="15px">
+          <text x="0" y="15" fill="white">DIGIJOB</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- End Preloader -->
+  <!-- Header Area -->
+  <header class="header">
+    <!-- Header Inner -->
+    <div class="header-inner">
+      <div class="container">
+        <div class="inner">
+          <div class="row">
+
+            <div class="col-lg-2 col-md-3 col-12">
+              <!-- Start Logo -->
+              <div class="logo">
+                <a href="index.html">DIGIJOB</a>
+              </div>
+              <!-- End Logo -->
+              <!-- Mobile Nav -->
+              <div class="mobile-nav"></div>
+              <!-- End Mobile Nav -->
+            </div>
+            <div class="col-lg-10 col-md-9 col-12">
+              <!-- Main Menu -->
+              <div class="main-menu" style="float: right;">
+                <nav class="navigation">
+                  <ul class="nav menu">
+                    <li><a class="nav-link scrollto" href="/acceuil">Mon espace</a>
+                    </li>
+                    <li><a class="nav-link scrollto" href="/allCandidature">Mes candidatures</a></li>
+                    <li class="active"><a href="/Updateprofile">Mon profil et Cv</a></li>
+                    <li><a class="nav-link scrollto" href="/allOffres">Offres</a></li>
+                    <li><a class="nav-link scrollto" href="/allEntreprises">Entreprises</a></li>
+                    <li><a class="nav-link scrollto" href="/allEvenement">Evènements</a></li>
+                    <li class="slicknav_parent slicknav_open user">
+                      <a href="#" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><i class="bi bi-person-circle" style="font-size: 1.2rem;"></i>
+                      </a>
+                      <ul class="dropdown" role="menu" aria-hidden="false" style="">
+                      <!--<li><a class="dropdown-item" href="#"><i class="bi bi-gear mx-2"
+                        style="font-size: 1.2rem;"></i>Paramètres</a></li>-->
+                      <li><a class="dropdown-item" style="color: red;" href="/logout"><i class="bi bi-power mx-2"
+                        style="font-size: 1.2rem; color: red;"></i>Déconnexion</a></li>
+                      </ul>
+                      </li>
+                  </ul>
+                </nav>
+              </div>
+              <!--/ End Main Menu -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Header Inner -->
+  </header>
+  <!-- End Header Area -->
+
+  <!--=================================
+inner banner -->
+  <div class="header-inner-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="candidates-user-info">
+            <div class="jobber-user-info">
+              <div class="profile-avatar">
+                <img class="img-fluid" src="https://digijobs.asinyo.com/files/profil/{{ .Profil.Photo }}"
+                  onerror="this.src='views/assets/img/profil-default.png'" alt="">
+                <a href="/Updateprofile"> <i class="bi bi-pencil-square"></i></a>
+              </div>
+              <div class="profile-avatar-info ms-4">
+                <div class="dash-prfs-caption">
+                  <div class="dash-prfs-title">
+                    <h4>{{ .Profil.Nom }} {{ .Profil.Prenoms }}</h4>
+                  </div>
+                  <div class="dash-prfs-subtitle">
+                    <div class="jbs-job-mrch-lists">
+                      <div class="single-mrch-lists">
+                        <span>{{ .Profil.TitrePosteCv }}</span>.<span><i class="fa-solid fa-location-dot me-1"></i>{{
+                          .Profil.Ville }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="jbs-grid-job-edrs-group mt-1">
+
+                    {{range .UserCompetenceCles}}
+                    <!-- <option value="{{ .Id }}" selected>{{ .Libelle }}</option> -->
+                    <span>{{ .Libelle }}</span>
+                    {{end}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="85" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar" style="width: {{.ProgressBarre}}%"></div>
+            <span class="progress-bar-number">{{.ProgressBarre}}%</span>
+          </div>
+          <div class="candidates-skills">
+            <div class="candidates-skills-info">
+              <h3 class="text-primary">{{.ProgressBarre}}%</h3>
+              <a href="candidates-mon-cv.html"><span class="d-block">Compétences par titre de poste.</span></a>
+            </div>
+            <div class="candidates-required-skills ms-auto mt-sm-0 mt-3">
+              <a class="btn btn-dark" href="/monCv">Complètez mon profil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--=================================
+inner banner -->
+
+  <!--=================================
+Dashboard Nav -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="sticky-top secondary-menu-sticky-top">
+            <div class="secondary-menu">
+              <ul class="list-unstyled mb-0">
+                <li><a class="active" href="/profile">Mon Profil</a></li>
+                <li><a href="/monCv">Mon CV</a></li>
+                <li><a class="visually-hidden-focusable" href="/Updateprofile">Modifier mon profil</a>
+                </li>
+                <li><a href="/modifPassword">Changer mon mot de Passe</a></li>
+                <li><a href="/critereDigicodeuse">Mes critères de recherche</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+Dashboard Nav -->
+
+  <!--=================================
+My Profile -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/Updateprofile" enctype="multipart/form-data" method="post">
+            <div class="user-dashboard-info-box">
+              <div class="section-title-02 mb-2 d-grid">
+                <h4>Informations personnelles</h4>
+              </div>
+              {{if .retour}}
+              <div class="alert alert-success">
+                {{ .retour}}
+              </div>
+              <hr />
+              {{end}}
+              <div class="row">
+                <input type="hidden" value="{{ .Profil.Photo}}" name="photoProfil">
+                <input type="hidden" value="{{ .Profil.Cv}}" name="pdfCv">
+                <div class="form-group mb-3 col-md-6">
+                  <label for="form-label">Photo de profil<a
+                      href="http://localhost:12000/files/profil/{{ .Profil.Photo }}" class="mx-2" target="_blank"
+                      rel="noopener noreferrer">Voir la Photo<i class="bi bi-image mx-2"></i></a></label>
+                  <input class="form-control" type="file" id="formFile" value="{{ .Profil.Photo}}" name="photo">
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label for="form-label">CV<a href="http://localhost:12000/files/cv/{{ .Profil.Cv }}" class="mx-2"
+                      target="_blank" rel="noopener noreferrer">Voir le CV<i
+                        class="bi bi-file-pdf mx-2"></i></a></label>
+                  <input class="form-control" type="file" id="formFile" value="{{ .Profil.Cv}}" name="cv">
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label">Nom</label>
+                  <input type="text" class="form-control" value="{{ .Profil.Nom }}" name="nom">
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label">Prénoms</label>
+                  <input type="text" class="form-control" value="{{ .Profil.Prenoms }}" name="prenoms">
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" value="{{ .Profil.Email }}" name="email">
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label">Adresse</label>
+                  <input type="text" class="form-control" defaultValue="1000" value="{{ .Profil.Adresse }}"
+                    name="adresse">
+                </div>
+
+                <div class="form-group mb-3 col-md-4 datetimepickers">
+                  <label class="form-label">Date de nassiance</label>
+                  <div class="input-group date" id="datetimepicker-01" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" name="date_naissance"
+                      value="{{ .Profil.DateNaissance }}" data-target="#datetimepicker-01">
+                    <div class="input-group-append d-flex" data-target="#datetimepicker-01"
+                      data-toggle="datetimepicker">
+                      <div class="input-group-text py-2" style="border-radius: 10px;"><i class="bi bi-calendar3"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group mb-3 col-md-4 select-border">
+                  <label class="form-label">Titre de poste (fonction)</label>
+                  <input type="text" class="form-control" value="{{ .Profil.TitrePosteCv }}" name="titrePosteCv">
+                </div>
+                <div class="form-group mb-3 col-md-4 select-border">
+                  <label class="form-label">Nationalité</label>
+                  <input type="text" class="form-control" value="{{ .Profil.Nationalite }}" name="nationalite">
+                </div>
+                <div class="form-group mb-3 col-md-4 select-border">
+                  <label class="form-label">Niveau d'étude (Bac+5)</label>
+                  <input type="text" class="form-control" value="{{ .Profil.NiveauEtude}}" name="niveau_etude">
+                </div>
+                <div class="form-group mb-3 col-md-4 select-border">
+                  <label class="form-label">Année Experience (Exemple: 3)</label>
+                  <input type="text" class="form-control" value="{{ .Profil.AnneeExperience}}" name="annee_experience">
+                </div>
+                <div class="form-group mb-3 col-md-4 select-border">
+                  <label class="form-label">Pays</label>
+                  <!--<input type="text" class="form-control" value="{{ .Profil.Pays }}" name="pays">-->
+                  <select id="country" name="pays" class="form-control js-example-basic-multiple" ata-default=""
+                    data-flag="true">
+                    <option value="{{ .Profil.Pays }}" selected>{{ .Profil.Pays }}</option>
+                    <option country-code="+355" value="AL(Albanie)"> Albanie</option>
+                    <option country-code="+213" value="DZ(Algeriae)"> Algerie</option>
+                    <option country-code="+49" value="DE(Allemagne)"> Allemagne</option>
+                    <option country-code="+376" value="AD(Andorre)"> Andorre</option>
+                    <option country-code="+244" value="AO(Angola)"> Angola</option>
+                    <option country-code="+1264" value="AI(Anguilla)"> Anguilla</option>
+                    <option country-code="+672" value="AQ(Antarctique)"> Antarctique</option>
+                    <option country-code="+1268" value="AG(Antigua et barbuda)"> Antigua et barbuda</option>
+                    <option country-code="+54" value="AR(Argentine)"> Argentine</option>
+                    <option country-code="+374" value="AM(Arménie)"> Arménie</option>
+                    <option country-code="+297" value="AW(Aruba)"> Aruba</option>
+                    <option country-code="+61" value="AU(Australie)"> Australie</option>
+                    <option country-code="+43" value="AT(Autriche)"> Autriche</option>
+                    <option country-code="+994" value="AZ(Azerbaïdjan)"> Azerbaïdjan</option>
+                    <option country-code="+1242" value="BS(Bahamas)"> Bahamas</option>
+                    <option country-code="+973" value="BH(Bahreïn)"> Bahreïn</option>
+                    <option country-code="+880" value="BD(Bangladesh)"> Bangladesh</option>
+                    <option country-code="+1246" value="BB(Barbade)"> Barbade</option>
+                    <option country-code="+375" value="BY(Bélarus)"> Bélarus</option>
+                    <option country-code="+32" value="BE(Belgique)"> Belgique</option>
+                    <option country-code="+501" value="BZ(Belize)"> Belize</option>
+                    <option country-code="+229" value="BJ(Bénin)"> Bénin</option>
+                    <option country-code="+1441" value="BM(Bermudes)"> Bermudes</option>
+                    <option country-code="+975" value="BT(Bhoutan)"> Bhoutan</option>
+                    <option country-code="+591" value="BO(Bolivie)"> Bolivie</option>
+                    <option country-code="+387" value="BA(Bosnie herzégovine)"> Bosnie herzégovine</option>
+                    <option country-code="+267" value="BW(Botswana)"> Botswana</option>
+                    <option country-code="+55" value="BR(Brésil)"> Brésil</option>
+                    <option country-code="+246" value="IO"> BritishIndianOceanTerritory</option>
+                    <option country-code="+673" value="BN(Brunei darussalam)"> Brunei darussalam</option>
+                    <option country-code="+359" value="BG(Bulgarie)"> Bulgarie</option>
+                    <option country-code="+226" value="BF(Burkina faso)"> Burkina faso</option>
+                    <option country-code="+257" value="BI(Burundi)"> Burundi</option>
+                    <option country-code="+855" value="KH(Cambodge)"> Cambodge</option>
+                    <option country-code="+237" value="CM(Cameroun)"> Cameroun</option>
+                    <option country-code="+1" value="CA(Canada)"> Canada</option>
+                    <option country-code="+238" value="CV(Cap vert)"> Cap vert</option>
+                    <option country-code="+1345" value="KY(Caïmans, îles)"> Caïmans, îles</option>
+                    <option country-code="+236" value="CF(Centrafricaine, république)"> Centrafricaine, république</option>
+                    <option country-code="+235" value="TD"> Chad</option>
+                    <option country-code="+56" value="CL(Chili)"> Chili</option>
+                    <option country-code="+86" value="CN(Chine)"> Chine</option>
+                    <option country-code="+61" value="CX(Christmas, île)"> Christmas, île</option>
+                    <option country-code="+61" value="CC(Cocos (keeling), îles)"> Cocos (keeling), îles</option>
+                    <option country-code="+57" value="CO(Colombie)"> Colombie</option>
+                    <option country-code="+269" value="KM(Comores)"> Comores</option>
+                    <option country-code="+242" value="CG(Congo)"> Congo</option>
+                    <option country-code="+682" value="CK(Cook, îles)"> Cook, îles</option>
+                    <option country-code="+506" value="CR(Costa rica)"> Costa rica</option>
+                    <option country-code="+225" value="CI(Cote d'Ivoire)"> Cote d'Ivoire</option>
+                    <option country-code="+385" value="HR(Croatie)"> Croatie</option>
+                    <option country-code="+53" value="CU(Cuba)"> Cuba</option>
+                    <option country-code="+357" value="CY( Chypre)">  Chypre</option>
+                    <option country-code="+42" value="CZ(Tchèque, république)"> Tchèque, république</option>
+                    <option country-code="+45" value="DK(Danemark)"> Danemark</option>
+                    <option country-code="+253" value="DJ(Djibouti)"> Djibouti</option>
+                    <option country-code="+1809" value="DM(Dominique)"> Dominique</option>
+                    <option country-code="+1809" value="DO(Dominicaine, république)"> Dominicaine, république</option>
+                    <option country-code="+593" value="EC(Équateur)"> Équateur</option>
+                    <option country-code="+20" value="EG(Égypte)"> Égypte</option>
+                    <option country-code="+503" value="SV(El salvador)"> El salvador</option>
+                    <option country-code="+240" value="GQ(Guinée équatoriale)"> Guinée équatoriale</option>
+                    <option country-code="+291" value="ER(Érythrée)"> Érythrée</option>
+                    <option country-code="+372" value="EE(Estonie)"> Estonie</option>
+                    <option country-code="+251" value="ET(Éthiopie)"> Éthiopie</option>
+                    <option country-code="+500" value="FK(Falkland, îles (malvinas))"> Falkland, îles (malvinas)</option>
+                    <option country-code="+298" value="FO(Féroé, îles)"> Féroé, îles</option>
+                    <option country-code="+679" value="FJ(Fidji)"> Fidji</option>
+                    <option country-code="+358" value="FI(Finlande)"> Finlande</option>
+                    <option country-code="+33" value="FR(France)"> France</option>
+                    <option country-code="+594" value="GF(Guyane française)"> Guyane française</option>
+                    <option country-code="+689" value="PF"> FrenchPolynesia</option>
+                    <option country-code="+241" value="GA(Gabon)"> Gabon</option>
+                    <option country-code="+220" value="GM(Gambie)"> Gambie</option>
+                    <option country-code="+7880" value="GE(Géorgie)"> Géorgie</option>
+                    <option country-code="+233" value="GH(Ghana)"> Ghana</option>
+                    <option country-code="+350" value="GI(Gibraltar)"> Gibraltar</option>
+                    <option country-code="+30" value="GR(Grèce)"> Grèce</option>
+                    <option country-code="+299" value="GL(Groenland)"> Groenland</option>
+                    <option country-code="+1473" value="GD(Grenade)"> Grenade</option>
+                    <option country-code="+590" value="GP(Guadeloupe)"> Guadeloupe</option>
+                    <option country-code="+671" value="GU(Guam)"> Guam</option>
+                    <option country-code="+502" value="GT(Guatemala)"> Guatemala</option>
+                    <option country-code="+44" value="GG(Guernesey)"> Guernesey</option>
+                    <option country-code="+224" value="GN(Guinée)"> Guinée</option>
+                    <option country-code="+245" value="GW(Guinée bissau)"> Guinée bissau</option>
+                    <option country-code="+592" value="GY(Guyana)"> Guyana</option>
+                    <option country-code="+509" value="HT(Haïti)"> Haïti</option>
+                    <option country-code="+504" value="HN(Honduras)"> Honduras</option>
+                    <option country-code="+852" value="HK(Hong kong)"> Hong kong</option>
+                    <option country-code="+36" value="HU(Hongrie)"> Hongrie</option>
+                    <option country-code="+354" value="IS(Islande)"> Islande</option>
+                    <option country-code="+91" value="IN"> India</option>
+                    <option country-code="+62" value="ID"> Indonesia</option>
+                    <option country-code="+98" value="IR"> Iran</option>
+                    <option country-code="+964" value="IQ"> Iraq</option>
+                    <option country-code="+353" value="IE(Irlande)"> Irlande</option>
+                    <option country-code="+972" value="IL(Israël)"> Israël</option>
+                    <option country-code="+39" value="IT(Italie)"> Italie</option>
+                    <option country-code="+1876" value="JM(Jamaïque)"> Jamaïque</option>
+                    <option country-code="+81" value="JP(Japon)"> Japon</option>
+                    <option country-code="+44" value="JE(Jersey)"> Jersey</option>
+                    <option country-code="+962" value="JO(Jordanie)"> Jordanie</option>
+                    <option country-code="+7" value="KZ(Kazakhstan)"> Kazakhstan</option>
+                    <option country-code="+254" value="KE(Kenya)"> Kenya</option>
+                    <option country-code="+686" value="KI(Kiribati)"> Kiribati</option>
+                    <option country-code="+850" value="KP(Corée du Nord)"> Corée du Nord</option>
+                    <option country-code="+82" value="KR(Corée du Sud)"> Corée du Sud</option>
+                    <option country-code="+965" value="KW(Koweït)"> Koweït</option>
+                    <option country-code="+996" value="KG(Kirghizistan)"> Kirghizistan</option>
+                    <option country-code="+856" value="LA(Lao)"> Lao</option>
+                    <option country-code="+371" value="LV(Lettonie)"> Lettonie</option>
+                    <option country-code="+961" value="LB(Liban)"> Liban</option>
+                    <option country-code="+266" value="LS"> Lesotho</option>
+                    <option country-code="+231" value="LR(Libéria)"> Libéria</option>
+                    <option country-code="+218" value="LY(Libye)"> Libye</option>
+                    <option country-code="+417" value="LI(Liechtenstein)"> Liechtenstein</option>
+                    <option country-code="+370" value="LT(Lituanie)"> Lituanie</option>
+                    <option country-code="+352" value="LU(Luxembourg)"> Luxembourg</option>
+                    <option country-code="+853" value="MO(Macao)"> Macao</option>
+                    <option country-code="+389" value="MK(Macédoine)"> Macédoine</option>
+                    <option country-code="+261" value="MG(Madagascar)"> Madagascar</option>
+                    <option country-code="+265" value="MW(Malawi)"> Malawi</option>
+                    <option country-code="+60" value="MY(Malaisie)"> Malaisie</option>
+                    <option country-code="+960" value="MV(Maldives)"> Maldives</option>
+                    <option country-code="+223" value="ML(Mali)"> Mali</option>
+                    <option country-code="+356" value="MT(Malte)"> Malte</option>
+                    <option country-code="+692" value="MH(Marshall, îles)"> Marshall, îles</option>
+                    <option country-code="+596" value="MQ(Martinique)"> Martinique</option>
+                    <option country-code="+222" value="MR(Mauritanie)"> Mauritanie</option>
+                    <option country-code="+230" value="MU(Maurice)"> Maurice</option>
+                    <option country-code="+269" value="YT(Mayotte)"> Mayotte</option>
+                    <option country-code="+52" value="MX(Mexique)"> Mexique</option>
+                    <option country-code="+691" value="FM(Micronésie)"> Micronésie</option>
+                    <option country-code="+373" value="MD(Moldova)"> Moldova</option>
+                    <option country-code="+377" value="MC(Monaco)"> Monaco</option>
+                    <option country-code="+976" value="MN(Mongolie)"> Mongolie</option>
+                    <option country-code="+1664" value="ME(Monténégro)"> Monténégro</option>
+                    <option country-code="+1" value="MS(Montserrat)"> Montserrat</option>
+                    <option country-code="+212" value="MA(Maroc)"> Maroc</option>
+                    <option country-code="+258" value="MZ(Mozambique)"> Mozambique</option>
+                    <option country-code="+95" value="MM(Myanmar)"> Myanmar</option>
+                    <option country-code="+264" value="NA(Namibie)"> Namibie</option>
+                    <option country-code="+674" value="NR(Nauru)"> Nauru</option>
+                    <option country-code="+977" value="NP(Népal)"> Népal</option>
+                    <option country-code="+31" value="NL(Pays bas)"> Pays bas</option>
+                    <option country-code="+599" value="AN(NetherlandsAntilles)"> NetherlandsAntilles</option>
+                    <option country-code="+687" value="NC(Nouvelle calédonie)"> Nouvelle calédonie</option>
+                    <option country-code="+64" value="NZ(Nouvelle zélande)"> Nouvelle zélande</option>
+                    <option country-code="+505" value="NI(Nicaragua)"> Nicaragua</option>
+                    <option country-code="+227" value="NE(Niger)"> Niger</option>
+                    <option country-code="+234" value="NG(Nigéria)"> Nigéria</option>
+                    <option country-code="+683" value="NU(Niué)"> Niué</option>
+                    <option country-code="+672" value="NF(Norfolk, île)"> Norfolk, île</option>
+                    <option country-code="+670" value="MP(Mariannes du nord, îles)"> Mariannes du nord, îles</option>
+                    <option country-code="+47" value="NO(Norvège)"> Norvège</option>
+                    <option country-code="+968" value="OM(Oman)"> Oman</option>
+                    <option country-code="+92" value="PK(Pakistan)"> Pakistan</option>
+                    <option country-code="+680" value="PW(Palaos)"> Palaos</option>
+                    <option country-code="+507" value="PA(Panama)"> Panama</option>
+                    <option country-code="+675" value="PG(Papouasie nouvelle guinée)"> Papouasie nouvelle guinée</option>
+                    <option country-code="+595" value="PY(Paraguay)"> Paraguay</option>
+                    <option country-code="+51" value="PE(Pérou)"> Pérou</option>
+                    <option country-code="+63" value="PH(Philippines)"> Philippines</option>
+                    <option country-code="+48" value="PL(Pologne)"> Pologne</option>
+                    <option country-code="+351" value="PT(Portugal)"> Portugal</option>
+                    <option country-code="+1787" value="PR(Porto rico)"> Porto rico</option>
+                    <option country-code="+974" value="QA(Qatar)"> Qatar</option>
+                    <option country-code="+262" value="RE(Réunion)"> Réunion</option>
+                    <option country-code="+40" value="(Roumanie)"> Roumanie</option>
+                    <option country-code="+44" value="GB(Royaume uni)"> Royaume uni</option>
+                    <option country-code="+7" value="RU(Russie)"> Russie</option>
+                    <option country-code="+250" value="RW(Rwanda)"> Rwanda</option>
+                    <option country-code="+378" value="SM(Saint marin)"> Saint marin</option>
+                    <option country-code="+239" value="ST(Sao tomé et principe)"> Sao tomé et principe</option>
+                    <option country-code="+966" value="SA(Arabie saoudite)"> Arabie saoudite</option>
+                    <option country-code="+221" value="SN(Sénégal)"> Sénégal</option>
+                    <option country-code="+381" value="RS(Serbie)"> Serbie</option>
+                    <option country-code="+248" value="SC(Seychelles)"> Seychelles</option>
+                    <option country-code="+232" value="SL(Sierra leone)"> Sierra leone</option>
+                    <option country-code="+232" value="SG(Singapour)"> Singapour</option>
+                    <option country-code="+421" value="SK(Slovaquie)"> Slovaquie</option>
+                    <option country-code="+386" value="SI(Slovénie)"> Slovénie</option>
+                    <option country-code="+677" value="SB(Salomon, îles)"> Salomon, îles</option>
+                    <option country-code="+252" value="SO(Somalie)"> Somalie</option>
+                    <option country-code="+27" value="ZA"(Afrique du sud)> Afrique du sud</option>
+                    <option country-code="+34" value="ES(Spain)"> Spain</option>
+                    <option country-code="+94" value="LK(Sri lanka)"> Sri lanka</option>
+                    <option country-code="+249" value="SD(Soudan)"> Soudan</option>
+                    <option country-code="+597" value="SR(Suriname)"> Suriname</option>
+                    <option country-code="+268" value="SZ(Swaziland)"> Swaziland</option>
+                    <option country-code="+46" value="SE(Suède)"> Suède</option>
+                    <option country-code="+41" value="CH(Suisse)"> Suisse</option>
+                    <option country-code="+963" value="SY(Syrienne, république arabe)"> Syrienne, république arabe</option>
+                    <option country-code="+886" value="TW(Taïwan, province de chine)"> Taïwan, province de chine</option>
+                    <option country-code="+255" value="TZ(Tanzanie, république unie de)"> Tanzanie, république unie de</option>
+                    <option country-code="+235" value="TD(Tchad)"> Tchad</option>
+                    <option country-code="+420" value="CZ(Tchèque, république)"> Tchèque, république</option>
+                    <option country-code="+7" value="TJ(Tadjikistan)"> Tadjikistan</option>
+                    <option country-code="+66" value="TH(Thaïlande)"> Thaïlande</option>
+                    <option country-code="+228" value="TG(Togo)"> Togo</option>
+                    <option country-code="+676" value="TO(Tonga)"> Tonga</option>
+                    <option country-code="+1868" value="TT(Trinité et tobago)"> Trinité et tobago</option>
+                    <option country-code="+216" value="TN(Tunisie)"> Tunisie</option>
+                    <option country-code="+90" value="TR(Turquie)"> Turquie</option>
+                    <option country-code="+7" value="TM(Turkménistan)"> Turkménistan</option>
+                    <option country-code="+1649" value="TC(Turks et caïcos, îles)"> Turks et caïcos, îles</option>
+                    <option country-code="+688" value="TV(Tuvalu)"> Tuvalu</option>
+                    <option country-code="+256" value="UG(Uganda)"> Uganda</option>
+                    <option country-code="+380" value="UA(Ukraine)"> Ukraine</option>
+                    <option country-code="+971" value="AE(United Arab Emirates)"> United Arab Emirates</option>
+                    <option country-code="+1" value="US(United States)"> United States</option>
+                    <option country-code="+598" value="UY(Uruguay)"> Uruguay</option>
+                    <option country-code="+998" value="UZ(Uzbekista)"> Uzbekistan</option>
+                    <option country-code="+678" value="VU(Vanuatu)"> Vanuatu</option>
+                    <option country-code="+58" value="VE(Venezuela)"> Venezuela</option>
+                    <option country-code="+84" value="VN(Vietnam)"> Vietnam</option>
+                    <option country-code="+1" value="VG"> VirginIslands},British</option>
+                    <option country-code="+1" value="VI"> VirginIslands},U.S.</option>
+                    <option country-code="+681" value="WF(Wallis et futuna)"> Wallis et futuna</option>
+                    <option country-code="+212" value="EH"> WesternSahara</option>
+                    <option country-code="+967" value="YE(Yemen)"> Yémen</option>
+                    <option country-code="+260" value="ZM(Zambie)"> Zambie</option>
+                    <option country-code="+263" value="ZW(Zimbabwe)"> Zimbabwe</option>
+
+                  </select>
+                </div>
+                <div class="form-group mb-3 col-md-4">
+                  <label class="form-label">Téléphone</label>
+                  <div class="input-group" data-target-input="nearest">
+                    <div class="input-group-append d-flex">
+                      <input type="text" id="country_phone_code" value="{{ .Profil.Indicatif }}" name="indicatif"
+                        class="form-control new-form-control" value="+225" data-flag="true" readonly=""
+                        style="width: 100px; float: left;">
+                    </div>
+                    <input type="tel" class="form-control mx-2" value="{{ .Profil.NumeroTelephone }}" id="phone_number"
+                      name="numero_telephone" placeholder="Numéro">
+                  </div>
+                </div>
+                <div class="form-group mb-3 col-md-4 select-border">
+                  <label class="form-label">Ville</label>
+                  <input type="text" class="form-control" value="{{ .Profil.Ville }}" name="ville">
+                </div>
+                <div class="form-group mb-3 col-md-4">
+                  <label class="form-label">Statut</label>
+                  <select class="form-select js-example-basic-multiple" name="statut"
+                    style="width:100%; border-radius: 15px;">
+                    <option value="{{ .Profil.Statut }}" selected>{{ .Profil.Statut }}</option>
+                    <option>Choisir...</option>
+                    <option value="À l'écoute d'opportunités">À l'écoute d'opportunités</option>
+                    <option value="Pas disponible">Pas disponible</option>
+                  </select>
+                </div>
+                <div class="form-group mb-0 col-md-12">
+                  <label class="form-label">Description</label>
+                  <textarea class="form-control" rows="5" name="description"
+                    placeholder="texte">{{ .Profil.Description}}</textarea>
+                </div>
+              </div>
+
+            </div>
+            <div class="user-dashboard-info-box">
+              <div class="section-title-02 mb-3">
+                <h4>Liens réseaux sociaux</h4>
+              </div>
+              <div class="row">
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label">Facebook</label>
+                  <input type="text" name="facebook" class="form-control" value="{{ .Profil.Facebook }}">
+                </div>
+                <div class="form-group mb-3 col-md-6">
+                  <label class="form-label">Twitter</label>
+                  <input type="text" name="twitter" class="form-control" value="{{ .Profil.Twitter }}">
+                </div>
+                <div class="form-group mb-0 col-md-6">
+                  <label class="form-label">Linkedin</label>
+                  <input type="text" name="linkedin" class="form-control" value="{{ .Profil.Linkedin }}">
+                </div>
+                <div class="form-group mb-0 col-md-6">
+                  <label class="form-label">Portfolio</label>
+                  <input type="text" name="portfolio" class="form-control" value="{{ .Profil.Porfolio }}">
+                </div>
+              </div>
+            </div>
+
+            <div class="user-dashboard-info-box">
+              <div class="form-group mb-0">
+                <h4 class="mb-3">Compétences clées</h4>
+                <div class="form-group mb-3 col-md-12">
+                  <label class="form-label">Ces compétences clés vous permettent de filtrer les offres qui apparaissent
+                    sur votre espace</label>
+                  <select class="form-select js-example-basic-multiple" name="competenceCles" multiple="multiple"
+                    style="width:100%">
+                    {{range .UserCompetenceCles}}
+                    <option value="{{ .Id }}" selected>{{ .Libelle }}</option>
+                    {{end}}
+                    <option>Choisir...</option>
+                    {{range .Competences}}
+                    <option value="{{ .Id }}">{{ .Libelle }}</option>
+                    {{end}}
+
+                  </select>
+                </div>
+
+              </div>
+            </div>
+            <button class="btn btn-md btn-primary" type="submit">Enregistrer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================
+My Profile -->
+  <!-- Footer Area -->
+  <footer id="footer" class="footer ">
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer">
+              <h2>A propos de nous</h2>
+              <p>Que vous soyez en quête d'une aventure digitale pour propulser votre carrière
+                ou que vous cherchiez à enrichir votre équipe avec les meilleurs talents du numérique,
+                vous avez frappé à la bonne porte.</p>
+              <!-- Social -->
+              <ul class="social">
+                <li><a href="https://www.facebook.com/digifemmes1" target="_blank"><i class="bi bi-facebook"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/company/digifemmes/" target="_blank"><i
+                      class="bi bi-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/digifemmes/" target="_blank"><i class="bi bi-instagram"></i></a>
+                </li>
+                <li><a href="https://twitter.com/DigiFemmes" target="_blank"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="https://www.tiktok.com/@digifemmes" target="_blank"><i class="bi bi-tiktok"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCGss3P1qjAI_nFl7twQu0gw" target="_blank"><i
+                      class="bi bi-youtube"></i></a></li>
+              </ul>
+              <!-- End Social -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer f-link">
+              <h2>Liens rapides</h2>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <ul>
+                    <li><a href="#hero"><i class="fa fa-caret-right" aria-hidden="true"></i>Accueil</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>A Propos de nous</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Entreprises</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Offres</a></li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Evènement</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                  <ul>
+                    <li><a href="#testimonial"><i class="fa fa-caret-right" aria-hidden="true"></i>Temoignages</a></li>
+                    <li><a href="#faq"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Nous Contacter</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer">
+              <h2>Newsletter</h2>
+              <p>Abonnez-vous à notre newsletter pour obtenir des nouvelles actualités dans votre boîte de réception.
+              </p>
+              <form action="#" method="get" target="_blank" class="newsletter-inner">
+                <input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your email address'" required="" type="email">
+                <button class="button"><i class="bi bi-send" style="color: #235BA8;"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Footer Top -->
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-12">
+            <div class="copyright-content">
+              <p>© Copyright 2023 | All Rights Reserved by <a href="https://www.digifemmes.com/digifemmes-academy"
+                  target="_blank">DigiFemmes</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Copyright -->
+  </footer>
+  <!--/ End Footer Area -->
+
+  <!--=================================
+Javascript -->
+
+
+  <!-- jquery Min JS -->
+  <script src="views/assets/js/jquery.min.js"></script>
+  <!-- jquery Migrate JS -->
+  <script src="views/assets/js/jquery-migrate-3.0.0.js"></script>
+  <script src="views/assets/js/popper/popper.min.js"></script>
+  <!-- Jquery Nav JS -->
+  <script src="views/assets/js/jquery.nav.js"></script>
+  <!-- Slicknav JS -->
+  <script src="views/assets/js/slicknav.min.js"></script>
+  <script src="views/assets/js/jquery.scrollUp.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ScrollUp JS -->
+  <script src="views/assets/js/bootstrap/bootstrap.min.js"></script>
+
+  <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+  <script src="views/assets/js/select2.min.js"></script>
+  <script src="views/assets/js/moment.min.js"></script>
+  <script src="views/assets/js/datetimepicker.min.js"></script>
+  <script src="views/assets/js/select2.js"></script>
+
+  <!-- Template Scripts (Do not remove)-->
+  <script src="views/assets/js/main.js"></script>
+  <script src="views/assets/js/custom.js"></script>
+  <script>
+    $('#country').on('change', function () {
+      var getCountryCode = $(this).find('option:selected').attr('country-code');
+      //alert(getCountryCode);
+      document.getElementById("country_phone_code").value = getCountryCode;
+    });
+  </script>
+
+</body>
+
+</html>

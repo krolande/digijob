@@ -1,0 +1,615 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="Site keywords here">
+  <meta name="description" content="">
+  <meta name='copyright' content=''>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>Candidatures</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="views/assets/css/font-awesome.min.css">
+  <!-- Slicknav -->
+  <link rel="stylesheet" href="views/assets/css/slicknav.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <!-- Medipro CSS -->
+  <link rel="stylesheet" href="views/assets/css/style1.css" />
+  <link rel="stylesheet" href="views/assets/css/responsive.css">
+</head>
+<style>
+  .candidates-feature-info {
+    border-radius: 15px;
+  }
+
+  ol {
+    display: flex;
+    margin: auto 0;
+    list-style: none;
+  }
+
+  ol li {
+    margin: 0 10px;
+  }
+
+  ol li a {
+    font-size: 20px;
+    color: #778ba5;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border: 1px solid #f7f7f7;
+    border-radius: 10px;
+    box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15);
+
+  }
+
+  ol li:hover a {
+    color: #fff;
+    background-color: #235aa841;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .bar {
+    position: relative;
+    display: none;
+  }
+
+  .bar span {
+    color: #235BA8;
+    height: 65px;
+    line-height: 65px;
+    width: 65px;
+    font-size: 35px;
+    text-align: center;
+    border: 1px solid #f7f7f7;
+    border-radius: 10px;
+    box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15);
+  }
+
+  @media screen and (max-width) {
+    nav {
+      display: block;
+      padding: 0;
+    }
+
+    .icon {
+      display: inline-block;
+      margin: 20px 50px;
+    }
+
+    ol {
+      display: block;
+      width: 100%;
+    }
+
+    ol li {
+      position: relative;
+      margin: 40px 0;
+      display: none;
+    }
+
+    ol li a {
+      width: 90%;
+      text-align: center;
+      padding: 30px;
+      font-size: 28px;
+      display: block;
+      border-radius: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: relative;
+    }
+
+    .bar {
+      position: block;
+      position: absolute;
+      top: 25px;
+      right: 80px;
+      cursor: pointer;
+    }
+
+    .bar #times {
+      color: #fe28a2;
+      display: none;
+    }
+
+    #check:checked~header ol li {
+      display: block;
+    }
+
+    #check:checked~header .bar #times {
+      display: block;
+    }
+
+    #check:checked~header .bar #bars {
+      display: block;
+    }
+  }
+
+  .user-dashboard-info-box {
+    border: 1px solid #f7f7f7;
+    border-radius: 10px;
+    box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15);
+  }
+</style>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+
+      <div class="indicator">
+        <svg width="70px" height="15px">
+          <text x="0" y="15" fill="white">DIGIJOB</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!-- End Preloader -->
+  <!-- Header Area -->
+  <header class="header">
+    <!-- Header Inner -->
+    <div class="header-inner">
+      <div class="container">
+        <div class="inner">
+          <div class="row">
+
+            <div class="col-lg-2 col-md-3 col-12">
+              <!-- Start Logo -->
+              <div class="logo">
+                <a href="index.html">DIGIJOB</a>
+              </div>
+              <!-- End Logo -->
+              <!-- Mobile Nav -->
+              <div class="mobile-nav"></div>
+              <!-- End Mobile Nav -->
+            </div>
+            <div class="col-lg-10 col-md-9 col-12">
+              <!-- Main Menu -->
+              <div class="main-menu" style="float: right;">
+                <nav class="navigation">
+                  <ul class="nav menu">
+                    <li><a href="/acceuil">Mon espace</a>
+                    </li>
+                    <li class="active"><a class="nav-link scrollto" href="/allCandidature">Mes candidatures</a></li>
+                    <li><a class="nav-link scrollto" href="/Updateprofile">Mon profil et Cv</a></li>
+                    <li><a class="nav-link scrollto" href="/allOffres">Offres</a></li>
+                    <li><a class="nav-link scrollto" href="/allEntreprises">Entreprises</a></li>
+                    <li><a class="nav-link scrollto" href="/allEvenement">Evènements</a></li>
+                    <li class="slicknav_parent slicknav_open user">
+                      <a href="#" class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><i class="bi bi-person-circle" style="font-size: 1.2rem;"></i>
+                      </a>
+                      <ul class="dropdown" role="menu" aria-hidden="false" style="">
+                      <!--<li><a class="dropdown-item" href="#"><i class="bi bi-gear mx-2"
+                        style="font-size: 1.2rem;"></i>Paramètres</a></li>-->
+                      <li><a class="dropdown-item" style="color: red;" href="/logout"><i class="bi bi-power mx-2"
+                        style="font-size: 1.2rem; color: red;"></i>Déconnexion</a></li>
+                      </ul>
+                      </li>
+                  </ul>
+                  </li>
+                  </ul>
+                </nav>
+              </div>
+              <!--/ End Main Menu -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Header Inner -->
+  </header>
+  <!-- End Header Area -->
+
+  <!-- End Header Area -->
+  <!--=================================inner banner -->
+  <section class="header-inner-info header-inner-big bg-holder text-white"
+    style="background-image: url(images/bg/banner-01.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="job-search-field">
+            <div class="job-search-item">
+              <div class="form row">
+                <div class="col-lg-5 col-md-4">
+                  <div class="form-group left-icon mb-md-0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--=================================inner banner -->
+  <!--=================================Candidates Job manage -->
+  <!--=================================Candidates Job manage -->
+  <section>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row mb-3 mb-lg-5 mt-3 mt-lg-0">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <div class="candidates-feature-info" style="background-color: #235BA8;">
+                <div class="candidates-info-icon text-white">
+                  <i class="bi bi-globe-europe-africa"></i>
+                </div>
+                <div class="candidates-info-content">
+                  <h6 class="candidates-info-title text-white">Candidature total</h6>
+                </div>
+                <div class="candidates-info-count">
+                  <h3 class="mb-0 text-white">{{.AllCandidature}}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <div class="candidates-feature-info" style="background-color: #00957E;">
+                <div class="candidates-info-icon text-white">
+                  <i class="bi bi-hand-thumbs-up-fill"></i>
+                </div>
+                <div class="candidates-info-content">
+                  <h6 class="candidates-info-title text-white">Candidatures présélectionnées</h6>
+                </div>
+                <div class="candidates-info-count">
+                  <h3 class="mb-0 text-white">{{.NbrecandSucces}}</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <div class="candidates-feature-info bg-danger">
+                <div class="candidates-info-icon text-white">
+                  <i class="bi bi-hand-thumbs-down-fill"></i>
+                </div>
+                <div class="candidates-info-content">
+                  <h6 class="candidates-info-title text-white">Candidatures rejetées</h6>
+                </div>
+                <div class="candidates-info-count">
+                  <h3 class="mb-0 text-white">{{.NbrecandFailed}}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+        </div>
+        {{if .Retour}}
+        <div class="alert alert-success">
+          {{ .Retour}}
+        </div>
+        <hr />
+        {{end}}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="user-dashboard-info-box mb-0">
+              <div class="row mb-4">
+                <div class="col-md-7 col-sm-5 d-flex align-items-center">
+                  <div class="section-title-02 mb-0 ">
+                    <h4 class="mb-0">Mes candidatures</h4>
+                  </div>
+                </div>
+                <!--<div class="col-md-5 col-sm-7 mt-3 mt-sm-0">
+                    <div class="search">
+                      <i class="bi bi-search" style="font-size: 10px;"></i>
+                      <input type="text" id="search" class="form-control" placeholder="Search....">
+                    </div>
+                  </div>-->
+              </div>
+              <div class="user-dashboard-table table-responsive">
+                <table id="example" class="table">
+                  <thead class="bg-light">
+                    <tr>
+                      <th scope="col">Titre du poste</th>
+                      <th scope="col">Date d'envoi</th>
+                      <th scope="col">Statut</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{range .Candidature}}
+                    <tr>
+                      <td>
+                        <div class="job-list">
+                          <div class="job-list-logo mt-2">
+                            <img class="img-fluid" src="https://digijobs.asinyo.com/files/logoEntreprise/{{.LogoEntreprise}}"
+                              alt="">
+                          </div>
+                          <div class="job-list-details mt-2">
+                            <div class="job-list-info">
+                              <div class="job-list-title mt-2">
+                                <h5 class="mb-0">
+                                  <a href="job-detail.html">{{.TitrePoste}}</a>
+                                </h5>
+                              </div>
+                              <div class="job-list-option">
+                                <ul class="list-unstyled">
+                                  <li>
+                                    <span>Par</span>
+                                    <a href="employer-detail.html">
+                                      <i class="bi bi-house-check mx-1"></i>{{.NomEntreprise}}</a>
+                                  </li>
+                                  <li>
+                                    <i class="bi bi-pin-map"></i>{{.Ville}}
+                                  </li>
+                                  <li>
+                                    <i class="freelance mb-1 mt-2">
+                                      <i class="bi bi-suitcase-lg"></i>{{.TypeContrat}}
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="mb-1 mt-2">{{.Created_atC}}</p>
+                      </td>
+                      <!-- Les conditions dans un html en golang -->
+                      <!-- http://2016.8-p.info/post/06-18-go-html-template/ -->
+                      <!-- https://www.appsloveworld.com/go/2/how-to-compare-the-length-of-a-list-in-html-template-in-golang?expand_article=1 -->
+                      <td>
+                        {{ if (eq .SatutEntreprise "Approuvée") }}
+                        <span class="badge rounded-pill text-bg-success">{{.SatutEntreprise}}</span>
+                        {{end}}
+
+                        {{ if (eq .SatutEntreprise "En attente") }}
+                        <span class="badge rounded-pill text-bg-warning">{{.SatutEntreprise}}</span>
+                        {{end}}
+
+                        {{ if (eq .SatutEntreprise "Réjetée") }}
+                        <span class="badge rounded-pill text-bg-danger">{{.SatutEntreprise}}</span>
+                        {{end}}
+                      </td>
+                      <td>
+                        <ol class="list-unstyled mb-0 d-flex">
+                          <li>
+                            <a href="#" class="text-primary" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal{{.IdC}}">
+                              <i class="bi bi-eye"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" class="text-info" data-bs-toggle="modal" data-bs-target="#editModal{{.IdC}}">
+                              <i class="bi bi-pencil-square"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/deleteCandidature?idC={{.IdC}}" class="text-danger" data-bs-toggle="tooltip" title="Supprimer">
+                              <i class="bi bi-trash3"></i>
+                            </a>
+                          </li>
+                        </ol>
+                      </td>
+                    </tr>
+                    {{end}}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- ****************************************view Modal********************************** -->
+  {{range .Candidature}}
+  <div class="modal fade modal-dialog-scrollable" id="exampleModal{{.IdC}}" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{.NomEntreprise}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-unstyled">
+            <li><strong>Titre du poste :</strong>
+              <p> {{.TitrePoste}}</p>
+            </li>
+            <li><strong>Compétences Clés :</strong>
+             
+              <p> {{range .LibelleTab}} {{range .}} {{.Libelle}}, {{end}} {{end}}</p>
+              
+            </li>
+            <li><strong>Année d'Experience :</strong>
+              <p>{{.AnneeExperience}} ans </p>
+            </li>
+            <li><strong>Description du poste :</strong>
+              <p>{{.DescriptionPoste}}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn text-white" data-bs-dismiss="modal"
+            style="background-color: #235BA8; border-radius: 15px;">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End View Modal -->
+
+  <!-- edit Modal -->
+  <!-- Scrollable modal -->
+  <div class="modal modal-dialog-scrollable fade" id="editModal{{.IdC}}" tabindex="-1" aria-labelledby="editModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h3 class="fw-bold mb-0" id="editModalLabel">Modifier ma candidature</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="" action="/allCandidature" method="post" enctype="multipart/form-data">
+          <div class="modal-body p-5 pt-0">
+            <div class="form-group text-black mb-3">
+              
+              <div class="rounded shadow-sm py-1 bg-light">
+                <h6 class="justify-content-center" style="margin-top:50px; margin-left:120px; margin-right:50px;">Télécharger un CV <span for="" style="color: red;">*</span></h6>
+                <p style="font-size: 12px; margin-left:50px; margin-right:50px;">Taille maximum: 1.5Mo - Formats acceptés : PDF</p>
+                <div class="cover-photo-contact mx-5" style="margin-left: 120px; margin-right:50px; border: #235BA8;">
+                  <label for="" class="form-label">
+                    <input class="form-control" type="file" id="formFile" placeholder="Ajouter un fichier" accept=".pdf" name="cvCandidature" required>
+                  </label>
+                </div>
+             </div>
+            </div>
+            <hr class="border border-2 opacity-50">
+            <div class="form-group text-black mb-3 mt-5">
+              <label ffor="floatingTextarea2" class="fw-bold mb-2">Mon message de candidature</label>
+              <textarea class="form-control"z placeholder="Message de candidature" id="floatingTextarea2"
+                style="height: 150px" name="motivation">{{.Motivation}}</textarea>
+            </div>
+            <input type="hidden" name="offres_id" value="{{ .OffresGenerales_id }}" />
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-dismiss="modal" type="submit"
+              style="background-color: #235BA8; border-radius: 15px;">Postuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {{end}}
+  <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin"></div>
+  <!--End edit Modal-->
+  <!-- Footer Area -->
+  <footer id="footer" class="footer ">
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer">
+              <h2>A propos de nous</h2>
+              <p>Que vous soyez en quête d'une aventure digitale pour propulser votre carrière
+                ou que vous cherchiez à enrichir votre équipe avec les meilleurs talents du numérique,
+                vous avez frappé à la bonne porte.</p>
+              <!-- Social -->
+              <ul class="social">
+                <li><a href="https://www.facebook.com/digifemmes1" target="_blank"><i class="bi bi-facebook"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/company/digifemmes/" target="_blank"><i
+                      class="bi bi-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/digifemmes/" target="_blank"><i class="bi bi-instagram"></i></a>
+                </li>
+                <li><a href="https://twitter.com/DigiFemmes" target="_blank"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="https://www.tiktok.com/@digifemmes" target="_blank"><i class="bi bi-tiktok"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCGss3P1qjAI_nFl7twQu0gw" target="_blank"><i
+                      class="bi bi-youtube"></i></a></li>
+              </ul>
+              <!-- End Social -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer f-link">
+              <h2>Liens rapides</h2>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <ul>
+                    <li><a href="#hero"><i class="fa fa-caret-right" aria-hidden="true"></i>Accueil</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>A Propos de nous</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Entreprises</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Offres</a></li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Evènement</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                  <ul>
+                    <li><a href="#testimonial"><i class="fa fa-caret-right" aria-hidden="true"></i>Temoignages</a></li>
+                    <li><a href="#faq"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Nous Contacter</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer">
+              <h2>Newsletter</h2>
+              <p>Abonnez-vous à notre newsletter pour obtenir des nouvelles actualités dans votre boîte de réception.
+              </p>
+              <form action="#" method="get" target="_blank" class="newsletter-inner">
+                <input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your email address'" required="" type="email">
+                <button class="button"><i class="bi bi-send" style="color: #235BA8;"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Footer Top -->
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-12">
+            <div class="copyright-content">
+              <p>© Copyright 2023 | All Rights Reserved by <a href="https://www.digifemmes.com/digifemmes-academy"
+                  target="_blank">DigiFemmes</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Copyright -->
+  </footer>
+  <!--/ End Footer Area -->
+
+  <!-- jquery Min JS -->
+  <script src="views/assets/js/jquery.min.js"></script>
+  <!-- jquery Migrate JS -->
+  <script src="views/assets/js/jquery-migrate-3.0.0.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+  <script src="views/assets/js/popper.min.js"></script>
+  <!-- Jquery Nav JS -->
+  <script src="views/assets/js/jquery.nav.js"></script>
+  <!-- Slicknav JS -->
+  <script src="views/assets/js/slicknav.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ScrollUp JS -->
+  <script src="views/assets/js/jquery.scrollUp.min.js"></script>
+  <!-- Counter Up CDN JS -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+  <!-- Main JS -->
+  <script src="views/assets/js/custom.js"></script>
+  <script src="views/assets/js/main.js"></script>
+  <script>
+    new DataTable('#example');
+  </script>
+</body>
+
+</html>

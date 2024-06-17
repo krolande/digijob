@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Mon profil</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/digijob.css">
+    <!-- Custom styles for this template -->
+    <link href="headers.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Vos styles CSS ici */
+        body{
+            font-family: "poppins";
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 15px;
+
+            margin: 0 auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            position: relative; /* Ajout de la position relative */
+        }
+
+        .Card{
+            border: 1px solid #ccc;
+            border-radius: 15px;
+
+            margin: 0 auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            position: relative; /* Ajout de la position relative */
+            height: 200px;
+            
+        }
+
+        .Cardx{
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            height: 80px;
+            background-color: #fbfcfe;
+            cursor: pointer;
+            
+        }
+
+        .competences-horizontales {
+        display: flex;
+        flex-wrap: nowrap; /* Empêche le retour à la ligne */
+        padding-left: 10px;
+        }
+       .competence {
+        margin-right: 15px; /* Marge entre les compétences */
+       }
+
+       .bouton-ajouter {
+        float: right; /* Place le bouton à droite du parent */
+        background-color: #235ba8;; /* Définit la couleur de fond en bleu */
+        color: white; /* Définit la couleur du texte en blanc */
+        padding: 5px 10px; /* Ajoute un peu de marge autour du texte */
+        border-radius: 15px; /* Supprime la bordure du bouton */
+        cursor: pointer; /* Change le curseur au survol */
+        border: none;
+    }  
+
+   .But{
+        
+        float: right;
+        background-color: #235ba8;
+        border-radius: 10px;
+        font-family: poppins;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        width: 200px;
+        height: 80px;
+
+    }
+
+
+        
+
+        .button {
+            background-color: #235ba8;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            margin: 0 auto; /* Pour centrer horizontalement */
+            display: block; /* Permet au bouton de prendre toute la largeur */
+            width: 200px; /* Largeur du bouton */
+            text-align: center; /* Centre le texte à l'intérieur du bouton */
+            padding: 10px; /* Remplissage du bouton */
+            border-radius: 10px; /* Coins arrondis */
+        }
+
+        
+
+        .mot{
+            font-weight: bold;
+            font-family: poppins;
+            font-size: 25px;
+        }
+
+        
+        .btn-edit {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #235ba8; /* Couleur de fond */
+            color: #fff; /* Couleur du texte */
+            padding: 5px 10px; /* Remplissage */
+            border: none; /* Supprimer la bordure */
+            border-radius: 15px; /* Coins arrondis */
+            cursor: pointer;
+            font-size: 15px; /* Taille de police */
+            
+        }
+        .text {
+            padding: 15px;
+            font-family: poppins;
+        }
+
+        .btn-edit:hover {
+            background-color: #5897f0;
+            color: rgb(3, 3, 3);
+
+        }
+
+        .profile-pic {
+            max-width: 50%;
+            height: auto;
+            border-radius: 50%; /* Crée un cercle autour de la photo */
+        }
+        .card-text {
+            font-size: 16px;
+            margin-bottom: 10px; /* Ajoute un espace entre les éléments */
+            font-family: poppins;
+        }
+
+        
+        .location-info {
+            margin-top: 25px;
+        }
+
+        .card-title {
+            font-size: 30px;
+            font-weight: semi-bold ;
+            font-family: poppins;
+            margin-bottom: 10px; /* Supprime la marge inférieure du titre */
+        }
+
+        .header-styled {
+        background-color: #fff; /* Fond blanc */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+    }
+
+    .nav-link-mon-profil {
+    color: #235ba8; /* Couleur du texte en bleu */
+     }
+
+     footer {
+            background-color: rgb(201, 238, 251); /* Couleur d'arrière-plan */
+            color: #fff; /* Couleur du texte */
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer h4 {
+            font-size: 1.5rem; /* Taille de police */
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        footer a {
+            color: #fcf7f7; /* Couleur des liens */
+            margin: 0 10px; /* Espacement des liens */
+            font-size: 1.2rem; /* Taille de police des liens */
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none; /* Supprime la soulignement par défaut des liens */
+            font-size: 15px;
+        }
+
+        footer a:hover {
+            color: #235ba8;
+        }
+
+        .icone-reseau-social {
+            font-size: 1.5rem; /* Taille des icônes */
+            margin: 0 10px; /* Espacement des icônes */
+            color: #fff; /* Couleur des icônes */
+            text-decoration: none; /* Supprime la soulignement par défaut des liens */
+        }
+
+        .icone-reseau-social:hover {
+            color: #007bff; /* Couleur des icônes au survol */
+        }
+
+        .credits{
+            cursor: pointer;
+        }
+
+        .credits:hover{
+            color: #007bff;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header class="p-3 mb-3 border-bottom header-styled">
+            <div class="container">
+                <!-- Début de la section de navigation -->
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 text-uppercase">
+                        <li><a href="/acceuil" class="nav-link px-2 link-body-emphasis">Mon espace</a></li>
+                        <li><a href="/allCandidature" class="nav-link px-2 link-body-emphasis">Mes candidatures</a></li>
+                        <li><a href="/allOffres" class="nav-link px-2 link-body-emphasis">Offres</a></li>
+                        <li><a href="/Updateprofile" class="nav-link px-2 nav-link-mon-profil">Mon profil</a></li>
+                        <li><a href="entreprises.html" class="nav-link px-2 link-body-emphasis">Entreprises</a></li>
+                        <li><a href="/allEvenement" class="nav-link px-2 link-body-emphasis">Evènements</a></li>
+                    </ul>
+
+                    <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-5" role="search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                        </svg>
+                    </div>
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">Paramètres</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <button class="btn btn-edit">Modifier</button>
+                    <div class="row">
+                        <!-- Colonne de la photo de profil -->
+                        <div class="col-md-3 text-center">
+                            <div class="profile-circle">
+                                <img src="kal-visuals-square.jpg" alt="Photo de profil" class="profile-pic">
+                               
+                            </div>
+                        </div>
+                        <!-- Colonne des informations personnelles -->
+                        <div class="col-md-6">
+                            <h5 class="card-title">Désiré chouwa</h5>
+                            <p class="card-text"><strong>Email:</strong> désiréchouwa@gmail.com</p>
+                            <p class="card-text"><strong>Téléphone:</strong> 0759500463</p>
+                        </div>
+                        <!-- Colonne de l'emplacement -->
+                        <div class="col-md-3 text-end">
+                            <p class="card-text text-center location-info"><strong>Pays:</strong> Cote d'Ivoire</p>
+                            <p class="card-text text-center "><strong>Ville:</strong> lakota</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container mt-5">
+            <div class="row">
+                
+                <div class="col-md-4"> <!-- Première colonne -->
+                    <h2>Mon CV</h2> <!-- Titre de la première colonne -->
+                    <div class="card p-4">
+                        
+                        <div class="text-center">
+                            <label for="cvInput" class="button">Télécharger mon CV</label>
+                            <input type="file" id="cvInput" style="display: none;">
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-lg-8"> <!-- Deuxième colonne, plus grande -->
+                    <h2>Formation</h2> <!-- Titre de la deuxième colonne -->
+                    <div class="card">
+                       
+                        <div class="">
+                            <div class="text">  
+                                <p>Niveau d'étude</p>
+                                <p>Titre de formation</p>
+                                <p>Etablissement (ecole)</p>
+                                <p>specialité</p>
+                                <p>Lieu</p>
+                                <div class="date">
+                                    <p>Date debut-date fin</p>
+                                </div>
+                                <button class="btn btn-edit">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row">
+                
+                <div class="col-md-4"> <!-- Première colonne -->
+                    <h2>Langues parlées</h2> <!-- Titre de la première colonne -->
+                    <div class="card p-4">
+                        <div class="test">
+                            <p>Langue 1</p>
+                            <p>Langue 2</p>
+                            <p>Langue 3</p>
+
+                        </div>
+                        <div class="">
+                            <div class=""> 
+                               <button class="btn btn-edit">Modifier</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-lg-8"> <!-- Deuxième colonne, plus grande -->
+                    <h2>Expérience professionnelle</h2> <!-- Titre de la deuxième colonne -->
+                    <div class="Card">
+                       
+                        <div class="">
+                            <div class="text">  
+                                <p>Titre du poste</p>
+                                <p>Nom de l'entreprise</p>
+                                <div class="date">
+                                    <p>Date debut-date fin</p>
+                                </div>
+                                <p>Lieu</p>
+                                <button class="btn btn-edit">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+
+
+        <div class="container mt-5">
+            <div class="row">
+                
+                <div class="col-md-4"> 
+                    <h2>Compétences</h2>
+                    <div class="card p-4">
+                        <div class="test">
+                            <p>Compétence 1</p>
+                            <p>Compétence 2</p>
+                            <p>Compétence 3</p>
+
+                        </div>
+                        <div class="">
+                            <div class=""> 
+                               <button class="btn btn-edit">Modifier</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h2>Compétences Clées</h2>
+                    <div class="Cardx">
+                        <select name="competence clees" id="comp">
+                            <option value="comp1">Compétence 1</option>
+                            <option value="comp2">Compétence 2</option>
+                            <option value="comp3">Compétence 3</option>
+                            <option value="comp4">Compétence 4</option>
+                            <option value="comp5">Compétence 5</option>
+                        </select>
+                        <button class="bouton-ajouter" onclick="ajouterCompetence()">Ajouter</button>
+                        <div id="competencesAjoutees" class="competences-horizontales">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="generer">
+                    <button class="But">Générer mon cv</button>
+                </div>
+                
+            </div>
+
+             
+             
+             
+            <script>
+                function ajouterCompetence() {
+                    var select = document.getElementById("comp");
+                    var competenceSelectionnee = select.options[select.selectedIndex].text;
+                    var divCompetences = document.getElementById("competencesAjoutees");
+                    var span = document.createElement("span");
+                    span.className = "competence";
+                    span.appendChild(document.createTextNode(competenceSelectionnee));
+                    divCompetences.appendChild(span);
+                }
+            </script>
+
+
+  
+        
+
+         
+
+    </main>
+
+</body>
+<footer id="footer">
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>2023 DigiJob</span></strong>. Tout droit reservé
+        </div>
+        <div class="credits">
+          by <a href="https://www.digifemmes.com/" target="_blank" title="Build Better UI, Faster" class="text-black">DigiFemmes-academy</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+</footer>
+
+</html>

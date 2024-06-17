@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        body {
+            font-family: Poppins;
+            background-color: #daeef8;
+
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+        .container {
+            width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-shadow: 5px 35px 35px rgba(8, 8, 8, 0.1);
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .submit-button {
+            background-color: #00957E;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #235ba8;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: rgb(49, 36, 36);
+        }
+
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #00957E;
+            ;
+            border-radius: 3px;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+
+        .text-primary {
+            font-family: poppins;
+            font-weight: bolder;
+
+
+        }
+
+        .close {
+            float: right;
+            background-color: #00957E;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            background-color: #235ba8;
+        }
+    </style>
+    <title>Candidature</title>
+</head>
+
+<body>
+
+    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+
+                    <div class="container">
+                        <div class="modal-header">
+                            <a href="details-offre.html"><button type="button" class="close " data-dismiss="modal"
+                                    aria-hidden="true">×</button></a>
+                            <p class="text-center text-primary  " style="padding: 25px;">FORMULAIRE DE CANDIDATURE</p>
+                        </div>
+
+
+                        <img class="profile-pic" src="https://digijobs.asinyo.com/files/profil/{{ .Profil.Photo }}" alt="">
+                        <p class="mb-0 text-primary">{{ .Profil.Nom }} {{ .Profil.Prenoms }}</p>
+                        <p>{{ .Profil.Email }} {{ .Profil.Indicatif }} {{ .Profil.NumeroTelephone }}</p>
+                        <form enctype="multipart/form-data" action="/candidatureOffreGenerale" method="post"
+                            class="form col-md-12 center-block">
+
+                            <div class="form-group">
+                                <label for="cv">Mon CV :</label>
+                                <input type="file" id="cv" name="cvCandidature" accept=".pdf" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="motivationLetter">Lettre de Motivation :</label>
+                                <textarea id="motivationLetter" name="motivation"
+                                    placeholder="Écrivez votre lettre de motivation ici..." accept=".pdf" required></textarea>
+                            </div>
+                            <input type="hidden" name="offres_id" value="{{ .Offres_id }}" />
+                            <button class="submit-button" type="submit">Postuler</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
