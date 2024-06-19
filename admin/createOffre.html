@@ -12,6 +12,8 @@
 
     <!-- App css -->
     <link href="assets/css/vendor/simplemde.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />   
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
     <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
@@ -144,7 +146,9 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title mb-3">Basic Wizard</h4>
+                                    <h4 class="header-title mb-3">
+                                        Formulaire de création d'une offre d'emploi
+                                    </h4>
 
                                     <form>
                                         <div id="basicwizard">
@@ -174,81 +178,144 @@
                                                     <div class="row">
                                                         <div class="col-xl-6">
                                                             <div class="mb-3">
-                                                                <label for="simpleinput" class="col-md-3 col-form-label">Titre du poste</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" id="simpleinput" class="form-control" name="titrePoste" />
+                                                                <label class="form-label">Titre du poste<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <input type="text" id="simpleinput" class="form-control" required name="titrePoste" />
                                                                 </div>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label class="col-md-3 col-form-label" for="confirm">Description du poste</label>
-                                                                <div class="col-md-9">
-                                                                    <textarea id="simplemde1" name="descriptionPoste" cols="30" rows="10"></textarea>
+                                                                <label class="form-label">Description du poste<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <textarea id="simplemde1" name="descriptionPoste" required></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label for="missions" class="col-md-3 col-form-label">Missions du poste<span class="text-danger">*</span></label>
-                                                                <div class="col-md-10 row" id="mission">                             
-                                                                  <div class="form-group mb-3 col-md-11">
-                                                                    <input type="text" name="titre" class="form-control" value=""
-                                                                      placeholder="Entrez un texte" multiple>
-                                                                  </div>
-                                                                  <div class="form-group mb-3 col-md-1 text-center">
-                                                                    <a class="d-block mission" href=""><i
-                                                                        class="mdi mdi-trash-can text-danger fs-4"></i></a>
-                                                                  </div>
+                                                                <label class="form-label">Ajouter une image :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <label for="input-file" id="drop-area">
+                                                                        <input type="file" accept="image/*" name="photoPoste" id="input-file" hidden />
+                                                                        <div id="img-view">
+                                                                            <img src="../admin/assets/images/508-icon.png" alt="" />
+                                                                            <p>
+                                                                                Glisser et déposer ou cliquer pour
+                                                                                télécharger une image
+                                                                            </p>
+                                                                            <span>Télécharger une image jpg, png,
+                                                                                jpeg</span>
+                                                                        </div>
+                                                                    </label>
                                                                 </div>
-                                                                <button class="btn btn-primary add-mission" type="button"
-                                                                      data-bs-target="#mission" aria-expanded="false" aria-controls="mission">
-                                                                      Ajouter une mission
-                                                                </button>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="input-file" id="drop-area">
-                                                                    Ajouter une image
-                                                                    <input type="file" accept="image/*" id="input-file" hidden />
-                                                                    <div id="img-view">
-                                                                        <img src="../admin/assets/images/508-icon.png" alt="" />
-                                                                        <p>
-                                                                            Glisser et déposer ou cliquer pour
-                                                                            télécharger une image
-                                                                        </p>
-                                                                        <span>Télécharger une image jpg, png,
-                                                                            jpeg</span>
-                                                                    </div>
-                                                                </label>
                                                             </div>
                                                         </div>
                                                         <!-- end col -->
+
+                                                        <div class="col-xl-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Nombre de poste à pouvoir<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <input type="number" id="simpleinput" class="form-control" required name="nombrePoste" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">TYpe de contrat<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <input type="text" id="simpleinput" class="form-control" required name="typeContrat" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label" or="example-date">Date limite des candidatures<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <input class="form-control" id="example-date" type="date" name="dateLimite">
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Missions du poste<span class="text-danger">*</span> :</label>
+                                                                <div class="bg-light shadow-sm p-3 col-md-10" id="mission" style="border-radius: 10px">
+                                                                    <fieldset class="row align-items-center">
+                                                                        <div class="form-group mb-3 col-md-10">
+                                                                            <label class="form-label">Libéllé</label>
+                                                                            <input type="text" name="libelleMission" class="form-control" value="" placeholder="Entrez un texte" multiple />
+                                                                        </div>
+                                                                        <div class="form-group mb-3 col-md-1 text-center">
+                                                                            <a class="mt-3 d-block mission" href=""><i class="mdi mdi-trash-can text-danger fs-4"></i></a>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn btn-primary add-mission mb-3" type="button" data-bs-target="#mission" aria-expanded="false" aria-controls="mission">
+                                                                <i class="mdi mdi-plus fs-5"></i>Ajouter une mission
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                     <!-- end row -->
                                                 </div>
 
                                                 <div class="tab-pane" id="basictab2">
                                                     <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="row mb-3">
-                                                                <label class="col-md-3 col-form-label" for="name">
-                                                                    First name</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" id="name" name="name" class="form-control" value="Francis" />
+                                                        <div class="col-xl-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Formation<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <div id="snow-editor" name="formation" class="bg-white" style="height: 300px;" required></div>                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Qualifications et compétences spécialisées/Profil recherché<span class="text-danger">*</span> :</label>
+                                                                <div class="bg-light shadow-sm p-3 col-md-10" id="profil-recherche" style="border-radius: 10px">
+                                                                    <fieldset class="row align-items-center">
+                                                                        <div class="form-group mb-3 col-md-10">
+                                                                            <label class="form-label">Libéllé</label>
+                                                                            <input type="text" name="profil" required class="form-control" value="" placeholder="Entrez un texte" multiple />
+                                                                        </div>
+                                                                        <div class="form-group mb-3 col-md-1 text-center">
+                                                                            <a class="mt-3 d-block profil-recherche" href=""><i class="mdi mdi-trash-can text-danger fs-4"></i></a>
+                                                                        </div>
+                                                                    </fieldset>
                                                                 </div>
                                                             </div>
-                                                            <div class="row mb-3">
-                                                                <label class="col-md-3 col-form-label" for="surname">
-                                                                    Last name</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="text" id="surname" name="surname" class="form-control" value="Brinkman" />
+                                                            <button class="btn btn-primary add-profil-recherche mb-3" type="button" data-bs-target="#profil-recherche" aria-expanded="false" aria-controls="mission">
+                                                                <i class="mdi mdi-plus fs-5"></i>Ajouter un profil
+                                                            </button>
+                                                        </div>
+                                                        <!-- end col -->
+                                                        <div class="col-xl-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">
+                                                                    Expérience requise<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <input type="text" name="anneeExperience" class="form-control" required value="2 ans..."/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Lieu du Poste<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <input type="text" class="form-control" required name="ville" />
                                                                 </div>
                                                             </div>
 
-                                                            <div class="row mb-3">
-                                                                <label class="col-md-3 col-form-label" for="email">Email</label>
-                                                                <div class="col-md-9">
-                                                                    <input type="email" id="email" name="email" class="form-control" value="cory1979@hotmail.com" />
-                                                                </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Langues exigées<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <select class="select2 form-control select2-multiple" name="langues" required data-toggle="select2" multiple="multiple" data-placeholder="Choose ...">
+                                                                        <option value="FR">Français</option>
+                                                                        <option value="AN">Anglais</option>
+                                                                        <option value="ES">Espagnol</option>
+                                                                        <option value="AL">Allemand</option>
+                                                                    </select>                                                               
+                                                                 </div>
                                                             </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Compétences clés<span class="text-danger">*</span> :</label>
+                                                                <div class="col-md-10 bg-light shadow-sm p-3" style="border-radius: 10px;">
+                                                                    <select class="select2 form-control select2-multiple" name="competenceCles" required data-toggle="select2" multiple="multiple" data-placeholder="Choose ...">
+                                                                        <option value="FR">HTML</option>
+                                                                        <option value="AN">SQL</option>
+                                                                        <option value="ES">PYTHON</option>
+                                                                        <option value="AL">SCALA</option>
+                                                                    </select>                                                               
+                                                                 </div>
+                                                            </div>
+                                                            <button type="button" class="btn btn-primary">Block Button</button>
                                                         </div>
-                                                        <!-- end col -->
                                                     </div>
                                                     <!-- end row -->
                                                 </div>
@@ -260,22 +327,19 @@
                                                                 <h2 class="mt-0">
                                                                     <i class="mdi mdi-check-all"></i>
                                                                 </h2>
-                                                                <h3 class="mt-0">Thank you !</h3>
-
-                                                                <p class="w-75 mb-2 mx-auto">
-                                                                    Quisque nec turpis at urna dictum luctus.
-                                                                    Suspendisse convallis dignissim eros at
-                                                                    volutpat. In egestas mattis dui. Aliquam
-                                                                    mattis dictum aliquet.
-                                                                </p>
-
-                                                                <div class="mb-3">
-                                                                    <div class="form-check d-inline-block">
-                                                                        <input type="checkbox" class="form-check-input" id="customCheck1" />
-                                                                        <label class="form-check-label" for="customCheck1">I agree with the Terms and
-                                                                            Conditions</label>
-                                                                    </div>
-                                                                </div>
+                                                                <h3 class="mt-0">Votre offre a bien été créée !</h3>
+                                                                <div class="col-sm-6 w-75 mb-2 mx-auto">
+                                                                    <div class="card">
+                                                                        <img src="assets/images/small/small-4.jpg" class="card-img-top" width="100" height="100" alt="Card image cap">
+                                                                        <div class="card-body">
+                                                                            <h5 class="card-title text-uppercase" style="color: #235BA8;">Special title treatment</h5>
+                                                                            <ol class="breadcrumb p-2 mb-0 justify-content-center">
+                                                                                <li class="breadcrumb-item"><i class="uil-home-alt"></i> Domaine</li>
+                                                                                <li class="breadcrumb-item active" aria-current="page">Type de contrat</li>
+                                                                            </ol>
+                                                                        </div>
+                                                                    </div> <!-- end card-->
+                                                                </div> <!-- end col-->  
                                                             </div>
                                                         </div>
                                                         <!-- end col -->
@@ -347,23 +411,39 @@
     <script src="assets/js/vendor/dropzone.min.js"></script>
     <!-- init js -->
     <script src="assets/js/vendor/simplemde.min.js"></script>
+    <!-- quill js -->
+    <script src="assets/js/vendor/quill.min.js"></script>
     <!-- SimpleMDE demo -->
     <script src="assets/js/app.min.js"></script>
     <script>
-      //Supprimer une compétence
-    $("#mission").on('click', '.mission', function () {
-      $(this).closest('fieldset').remove();
+        //Supprimer une compétence
+        $("#mission").on("click", ".mission", function() {
+            $(this).closest("fieldset").remove();
+        });
+
+        $(document).ready(function() {
+            $(".add-mission").click(function() {
+                var markup =
+                    "<fieldset class='row align-items-center'><div class='form-group col-sm-10'> <label class='form-label'>Libéllé</label> <input type='text' class='form-control' value='' placeholder='entrez l intitulé de la mission' name='libelleMission' required> </div><div class='form-group col-sm-1 text-center'> <a class='mt-3 d-block mission' href='#mission'><i class='mdi mdi-trash-can text-danger fs-4'></i></a> </div></fieldset>";
+                $("#mission").append(markup);
+            });
+        });
+    </script>
+
+<script>
+    //Supprimer une compétence
+    $("#profil-recherche").on("click", ".profil-recherche", function() {
+        $(this).closest("fieldset").remove();
     });
 
-    $(document).ready(function () {
-      $(".add-mission").click(function () {
-        var markup =
-        "<div class='col-md-10 row' id='mission'><div class='form-group mb-3 col-md-11'><input type='text' name='titre' class='form-control' value='' placeholder='Entrez un texte' multiple></div><div class='form-group mb-3 col-md-1 text-center'><a class='d-block mission' href=''><i class='mdi mdi-trash-can text-danger fs-4'></i></a></div></div>"
-        $("#mission").append(markup);
-      });
-
-    })
-    </script>
+    $(document).ready(function() {
+        $(".add-profil-recherche").click(function() {
+            var markup =
+                "<fieldset class='row align-items-center'><div class='form-group col-sm-10'> <label class='form-label'>Libéllé</label> <input type='text' class='form-control' value='' placeholder='entrez l intitulé de la profil-recherche' name='libelleprofil-recherche' required> </div><div class='form-group col-sm-1 text-center'> <a class='mt-3 d-block profil-recherche' href='#profil-recherche'><i class='mdi mdi-trash-can text-danger fs-4'></i></a> </div></fieldset>";
+            $("#profil-recherche").append(markup);
+        });
+    });
+</script>
 </body>
 
 </html>
